@@ -1,0 +1,6 @@
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Entities\bin\Debug\Entities.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Entities\bin\Debug\Entities.pdb
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Entities\obj\Debug\Entities.csproj.AssemblyReference.cache
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Entities\obj\Debug\Entities.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Entities\obj\Debug\Entities.pdb

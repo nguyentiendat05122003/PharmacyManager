@@ -1,0 +1,94 @@
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\bin\Debug\Presentation.exe
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\bin\Debug\Presentation.pdb
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\bin\Debug\BusinessLogicLayer.dll
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\bin\Debug\Utility.dll
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\bin\Debug\DataAccessLayer.dll
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\bin\Debug\BusinessLogicLayer.pdb
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\bin\Debug\Utility.pdb
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\bin\Debug\DataAccessLayer.pdb
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\obj\Debug\Presentation.csprojResolveAssemblyReference.cache
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\obj\Debug\Presentation.frm_Class.resources
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\obj\Debug\Presentation.frm_Main.resources
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\obj\Debug\Presentation.csproj.GenerateResource.Cache
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\obj\Debug\Presentation.exe
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\obj\Debug\Presentation.pdb
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Presentation\obj\Debug\Presentation.frm_Student.resources
+D:\Teaching\Đồ án\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.csproj.AssemblyReference.cache
+D:\Teaching\Đồ án\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.frm_Class.resources
+D:\Teaching\Đồ án\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.frm_Main.resources
+D:\Teaching\Đồ án\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.frm_Student.resources
+D:\Teaching\Đồ án\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+D:\Teaching\Đồ án\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
+D:\Teaching\Đồ án\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.csproj.AssemblyReference.cache
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.csproj.SuggestedBindingRedirects.cache
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.frm_Class.resources
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.frm_Main.resources
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.frm_Student.resources
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\Presentation.exe.config
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\Presentation.exe
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\Presentation.pdb
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\BusinessLogicLayer.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\Entities.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\Utility.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\DocXCore.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\DataAccessLayer.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\EPPlus.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\EPPlus.Interfaces.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\EPPlus.System.Drawing.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\BusinessLogicLayer.pdb
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\BusinessLogicLayer.dll.config
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\Entities.pdb
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\Utility.pdb
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\DataAccessLayer.pdb
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\EPPlus.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.csproj.CopyComplete
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.exe
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.csproj.AssemblyReference.cache
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.csproj.SuggestedBindingRedirects.cache
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmAddUser.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmCustomer.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmEmployee.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmHome.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmImportProducts.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmLogin.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmMain.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmProduct.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmProvider.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmSaleProducts.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.frm_Class.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.frm_Main.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.frm_Student.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.exe
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\Presentation.exe.config
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\Presentation.exe
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\Presentation.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\BusinessLogicLayer.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\Entities.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\Guna.UI2.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\Utility.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\DocXCore.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\DataAccessLayer.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\EPPlus.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\EPPlus.Interfaces.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\EPPlus.System.Drawing.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\BusinessLogicLayer.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\BusinessLogicLayer.dll.config
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\Entities.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\Utility.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\DataAccessLayer.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\EPPlus.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.csproj.CopyComplete

@@ -1,0 +1,119 @@
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\BusinessLogicLayer\bin\Debug\Utility.dll
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\BusinessLogicLayer\bin\Debug\Utility.pdb
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojResolveAssemblyReference.cache
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+D:\Teaching\Đồ án\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.AssemblyReference.cache
+D:\Teaching\Đồ án\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.AssemblyReference.cache
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll.config
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\DocumentFormat.OpenXml.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\DocXCore.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\Entities.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\EPPlus.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\EPPlus.Interfaces.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\EPPlus.System.Drawing.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\Microsoft.Extensions.DependencyModel.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\OpenXmlPowerTools.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Buffers.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Drawing.Common.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.IO.Packaging.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Memory.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Numerics.Vectors.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Reflection.TypeExtensions.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Security.Principal.Windows.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Text.Encodings.Web.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Text.Json.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.ValueTuple.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\Utility.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\Entities.pdb
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\Utility.pdb
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\DocumentFormat.OpenXml.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\EPPlus.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\Microsoft.Extensions.DependencyModel.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Buffers.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Drawing.Common.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.IO.Packaging.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Memory.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Numerics.Vectors.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Reflection.TypeExtensions.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Security.Principal.Windows.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Text.Encodings.Web.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Text.Json.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\bin\Debug\System.ValueTuple.xml
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CopyComplete
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll.config
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\DocumentFormat.OpenXml.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\DocXCore.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\Entities.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\EPPlus.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\EPPlus.Interfaces.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\EPPlus.System.Drawing.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\Microsoft.Extensions.DependencyModel.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\OpenXmlPowerTools.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Buffers.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Drawing.Common.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.IO.Packaging.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Memory.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Numerics.Vectors.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Reflection.TypeExtensions.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Security.Principal.Windows.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Text.Encodings.Web.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Text.Json.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.ValueTuple.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\Utility.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\Entities.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\Utility.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\DocumentFormat.OpenXml.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\EPPlus.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\Microsoft.Extensions.DependencyModel.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Buffers.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Drawing.Common.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.IO.Packaging.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Memory.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Numerics.Vectors.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Reflection.TypeExtensions.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Security.Principal.Windows.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Text.Encodings.Web.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Text.Json.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.ValueTuple.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.AssemblyReference.cache
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CopyComplete
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb

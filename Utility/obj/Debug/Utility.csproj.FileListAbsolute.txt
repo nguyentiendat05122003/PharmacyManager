@@ -1,0 +1,17 @@
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Utility\bin\Debug\Utility.dll
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Utility\bin\Debug\Utility.pdb
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Utility\obj\Debug\Utility.dll
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Utility\obj\Debug\Utility.pdb
+F:\Du lieu\Mo hinh 3 lop\Seminar 2\3Tier_DongNH\Utility\obj\Debug\Utility.csprojResolveAssemblyReference.cache
+D:\Teaching\Đồ án\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\bin\Debug\Utility.dll
+D:\Teaching\Đồ án\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\bin\Debug\Utility.pdb
+D:\Teaching\Đồ án\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\obj\Debug\Utility.csproj.AssemblyReference.cache
+D:\Teaching\Đồ án\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+D:\Teaching\Đồ án\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\obj\Debug\Utility.dll
+D:\Teaching\Đồ án\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\obj\Debug\Utility.pdb
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\bin\Debug\Utility.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\bin\Debug\Utility.pdb
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\obj\Debug\Utility.csproj.AssemblyReference.cache
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\obj\Debug\Utility.dll
+D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\obj\Debug\Utility.pdb
