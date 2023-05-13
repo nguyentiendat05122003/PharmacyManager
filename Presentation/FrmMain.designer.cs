@@ -60,7 +60,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.guna2Panel1.Size = new System.Drawing.Size(292, 740);
+            this.guna2Panel1.Size = new System.Drawing.Size(292, 903);
             this.guna2Panel1.TabIndex = 0;
             // 
             // guna2PictureBox1
@@ -281,9 +281,9 @@
             // pnlBody
             // 
             this.pnlBody.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlBody.Location = new System.Drawing.Point(139, 0);
+            this.pnlBody.Location = new System.Drawing.Point(298, 0);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(1161, 740);
+            this.pnlBody.Size = new System.Drawing.Size(1196, 903);
             this.pnlBody.TabIndex = 1;
             this.pnlBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBody_Paint);
             // 
@@ -291,7 +291,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1300, 740);
+            this.ClientSize = new System.Drawing.Size(1494, 903);
             this.Controls.Add(this.pnlBody);
             this.Controls.Add(this.guna2Panel1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;

@@ -22,3 +22,14 @@ D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\DataAccessLayer\ob
 D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
 D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\DataAccessLayer\bin\Debug\Entities.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\DataAccessLayer\bin\Debug\System.Data.SqlClient.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\DataAccessLayer\bin\Debug\Entities.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\DataAccessLayer\bin\Debug\System.Data.SqlClient.xml
+D:\WorkSpace\Đồ án 1\PharmacyManager\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+D:\WorkSpace\Đồ án 1\PharmacyManager\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\WorkSpace\Đồ án 1\PharmacyManager\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+D:\WorkSpace\Đồ án 1\PharmacyManager\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

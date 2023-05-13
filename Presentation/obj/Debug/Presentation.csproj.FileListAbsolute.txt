@@ -69,8 +69,6 @@ D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.frm
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.Properties.Resources.resources
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
-D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.exe
-D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.pdb
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\Presentation.exe.config
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\Presentation.exe
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\Presentation.pdb
@@ -92,3 +90,5 @@ D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\DataAccessLayer.
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\EPPlus.xml
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.csproj.CopyComplete
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.exe
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.pdb

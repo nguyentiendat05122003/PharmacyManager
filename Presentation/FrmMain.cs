@@ -59,7 +59,7 @@ namespace Presentation
 
         private void btnProvider_Click(object sender, EventArgs e)
         {
-          
+            OpenchildForm(new FrmProvider());
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)

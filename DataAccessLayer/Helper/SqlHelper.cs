@@ -2,8 +2,8 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Collections;
- 
+using System.Collections; 
+
 namespace DataAccessLayer
 {
     public abstract class SqlHelper
@@ -84,6 +84,9 @@ namespace DataAccessLayer
             cmd.Parameters.Clear();
             return val;
         }
+
+
+       
 
         /// <summary>
         /// Execute a SqlCommand that returns a resultset against the database specified in the connection string 

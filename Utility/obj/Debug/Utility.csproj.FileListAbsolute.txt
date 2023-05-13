@@ -15,3 +15,9 @@ D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\obj\Debug\
 D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
 D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\obj\Debug\Utility.dll
 D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Utility\obj\Debug\Utility.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\Utility\bin\Debug\Utility.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\Utility\bin\Debug\Utility.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\Utility\obj\Debug\Utility.csproj.AssemblyReference.cache
+D:\WorkSpace\Đồ án 1\PharmacyManager\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+D:\WorkSpace\Đồ án 1\PharmacyManager\Utility\obj\Debug\Utility.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\Utility\obj\Debug\Utility.pdb

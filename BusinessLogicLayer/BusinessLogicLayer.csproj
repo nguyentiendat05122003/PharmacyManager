@@ -245,8 +245,14 @@
   <ItemGroup>
     <Compile Include="ClassBUL.cs" />
     <Compile Include="CustomExport\ExportDocx.cs" />
+    <Compile Include="DonViTinhBUL.cs" />
     <Compile Include="Helper\DocxHelper.cs" />
     <Compile Include="Helper\ExcelHelper.cs" />
+    <Compile Include="Interface\IDonViTinhBUL.cs" />
+    <Compile Include="Interface\IProductBUL.cs" />
+    <Compile Include="Interface\IProviderBUL.cs" />
+    <Compile Include="ProductBUL.cs" />
+    <Compile Include="ProviderBUL.cs" />
     <Compile Include="StudentBUL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interface\IClassBUL.cs" />

@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
-            //System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            //System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            //System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            //System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -65,7 +61,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label14 = new System.Windows.Forms.Label();
-            //this.chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.guna2GradientPanel2.SuspendLayout();
@@ -78,7 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             this.guna2Panel1.SuspendLayout();
-//            ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -146,7 +140,7 @@
             this.label4.Location = new System.Drawing.Point(4, 149);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(192, 38);
+            this.label4.Size = new System.Drawing.Size(128, 25);
             this.label4.TabIndex = 2;
             this.label4.Text = "Khách hàng";
             // 
@@ -502,7 +496,6 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.Controls.Add(this.label14);
-            //this.guna2Panel1.Controls.Add(this.chartRevenue);
             this.guna2Panel1.Location = new System.Drawing.Point(25, 473);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -522,27 +515,6 @@
             this.label14.Size = new System.Drawing.Size(380, 28);
             this.label14.TabIndex = 53;
             this.label14.Text = "Biểu đồ doanh thu trong tháng 4";
-            // 
-            // chartRevenue
-            // 
-           // this.chartRevenue.BackColor = System.Drawing.SystemColors.Window;
-            //chartArea1.Name = "ChartArea1";
-            //this.chartRevenue.ChartAreas.Add(chartArea1);
-            //legend1.Name = "Legend1";
-            //this.chartRevenue.Legends.Add(legend1);
-            //this.chartRevenue.Location = new System.Drawing.Point(62, 5);
-            //this.chartRevenue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            //this.chartRevenue.Name = "chartRevenue";
-            //series1.ChartArea = "ChartArea1";
-            //series1.Legend = "Legend1";
-            //series1.Name = "SeriesRevenue";
-            //this.chartRevenue.Series.Add(series1);
-            //this.chartRevenue.Size = new System.Drawing.Size(692, 669);
-            //this.chartRevenue.TabIndex = 0;
-            //this.chartRevenue.Text = "chart1";
-            //title1.Name = "Title1";
-            //title1.Text = "Biểu đồ doanh thu";
-            //this.chartRevenue.Titles.Add(title1);
             // 
             // label15
             // 
@@ -578,7 +550,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1895, 1247);
+            this.ClientSize = new System.Drawing.Size(1786, 1240);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.guna2Panel1);
@@ -621,7 +593,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            //((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

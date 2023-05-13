@@ -15,7 +15,7 @@ namespace Utility
             for (int i = 0; i < a.Length; ++i)
                 s = s + " " + char.ToUpper(a[i][0]) + a[i].Substring(1).ToLower();
             return s.Trim();
-        }
+        }      
         public static string CatXau(string xau)
         {
             string s = xau.Trim();
