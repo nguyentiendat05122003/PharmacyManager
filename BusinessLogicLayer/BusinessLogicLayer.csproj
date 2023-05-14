@@ -249,8 +249,12 @@
     <Compile Include="Helper\DocxHelper.cs" />
     <Compile Include="Helper\ExcelHelper.cs" />
     <Compile Include="Interface\IDonViTinhBUL.cs" />
+    <Compile Include="Interface\ILoaiNhanVienBUL.cs" />
+    <Compile Include="Interface\INhanVienBUL.cs" />
     <Compile Include="Interface\IProductBUL.cs" />
     <Compile Include="Interface\IProviderBUL.cs" />
+    <Compile Include="LoaiNhanVienBUL.cs" />
+    <Compile Include="NhanVienBUL.cs" />
     <Compile Include="ProductBUL.cs" />
     <Compile Include="ProviderBUL.cs" />
     <Compile Include="StudentBUL.cs" />

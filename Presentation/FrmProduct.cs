@@ -95,7 +95,6 @@ namespace Presentation
             pro.Tenthuoc = txttenthuoc.Text;
             pro.Giaban = int.Parse(txtgiaban.Text);
             pro.Hansudung = DateTime.Parse(txthansudung.Text);
-            MessageBox.Show(cbbNcc.SelectedValue.ToString());
             pro.Mancc = (int)cbbNcc.SelectedValue;
             pro.Madonvitinh = (int)cbbDonvitinh.SelectedValue;
             try
@@ -145,7 +144,7 @@ namespace Presentation
             txtmathuoc.Text = dgvProduct[0, dgvProduct.CurrentCell.RowIndex].Value.ToString();
             txttenthuoc.Text = dgvProduct[1, dgvProduct.CurrentCell.RowIndex].Value.ToString();
             txtgiaban.Text = dgvProduct[2, dgvProduct.CurrentCell.RowIndex].Value.ToString();
-            txthansudung.Text = dgvProduct[3, dgvProduct.CurrentCell.RowIndex].Value.ToString();
+            txthansudung.Text = Utility.Tools.CatXauDate(dgvProduct[3, dgvProduct.CurrentCell.RowIndex].Value.ToString());
             cbbNcc.Text =  dgvProduct[4, dgvProduct.CurrentCell.RowIndex].Value.ToString();
             cbbDonvitinh.Text = dgvProduct[5, dgvProduct.CurrentCell.RowIndex].Value.ToString();
         }

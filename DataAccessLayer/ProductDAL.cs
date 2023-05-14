@@ -27,7 +27,6 @@ namespace DataAccessLayer
                 new SqlParameter(PARM_HANSUDUNG,SqlDbType.DateTime),
                 new SqlParameter(PARM_MANCC,SqlDbType.Int),
                 new SqlParameter(PARM_MADONVITINH,SqlDbType.Int),
-
             };
             parm[0].Value = tenthuoc;
             parm[1].Value = giaban;

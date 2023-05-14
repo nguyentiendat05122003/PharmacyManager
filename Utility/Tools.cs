@@ -22,11 +22,18 @@ namespace Utility
             while (s.IndexOf("  ") >= 0) s = s.Remove(s.IndexOf("  "), 1);
             return s;
         }
+        public static string CatXauDate(string xau)
+        {
+            string s = xau.Trim();
+            while (s.IndexOf(" ") >= 0) s = s.Remove(s.IndexOf(" "));
+            return s;
+        }
         public static string ChuanHoaXau(string xau, int max)
         {
             string s = CatXau(xau);
             while (s.Length < max) s = s + " ";
             return s;
         }
+        
     }
 }
