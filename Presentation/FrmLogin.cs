@@ -26,10 +26,10 @@ namespace Presentation
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {        
+        {                 
                 FrmMain frm = new FrmMain();
                 frm.Show();
-                this.Hide();          
+                this.Hide();                   
         }
     }
 }

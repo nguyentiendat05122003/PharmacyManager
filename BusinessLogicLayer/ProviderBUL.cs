@@ -60,6 +60,5 @@ namespace BusinessLogicLayer
         {
             return getAll().Where(x => (string.IsNullOrEmpty(cls.Mancc.ToString()) || x.Mancc.ToString().Contains(cls.Mancc.ToString()))).ToList();
         }
-
     }
 }

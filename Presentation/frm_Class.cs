@@ -139,7 +139,7 @@ namespace Presentation
             {
                 try
                 {
-                    cls.KetXuatWord(int.Parse(txtClassID.Text), @"Template\Lop_Template.docx", saveFileDialog.FileName);
+                    cls.KetXuatWord(int.Parse(txtClassID.Text), @"Template\SanPham.docx", saveFileDialog.FileName);
                     MessageBox.Show("Kết xuất thành công!");
                 }
                 catch (Exception ex)

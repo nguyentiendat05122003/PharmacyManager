@@ -16,6 +16,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Presentation
 {
+    //foreach (object item in product_provider)
+    //{
+    //    string maSP = (string)item.GetType().GetProperty("Tenncc").GetValue(item, null);
+    //}
     public partial class FrmProduct : Form
     {
         IProductBUL product = new ProductBUL();
@@ -27,7 +31,7 @@ namespace Presentation
         }     
         public void LoadData()
         {
-            var product_provider = product.getAllJoin(provider,donViTinh);
+            var product_provider = product.getAllJoin();
             dgvProduct.DataSource = product_provider;
             cbbNcc.DataSource = provider.getAll();
             cbbDonvitinh.DataSource = donViTinh.getAll();
@@ -49,12 +53,8 @@ namespace Presentation
         }
         private void FrmProduct_Load(object sender, EventArgs e)
         {
-            var product_provider = product.getAllJoin(provider,donViTinh);
-            txtmathuoc.Text = "Mã thuốc tự động tăng!";
-            //foreach (object item in product_provider)
-            //{
-            //    string maSP = (string)item.GetType().GetProperty("Tenncc").GetValue(item, null);
-            //}
+            var product_provider = product.getAllJoin();
+            txtmathuoc.Text = "Mã thuốc tự động tăng!";        
             dgvProduct.AutoGenerateColumns = false;
             dgvProduct.DataSource = product_provider;
             cbbNcc.DataSource = provider.getAll();            
@@ -151,6 +151,53 @@ namespace Presentation
         private void btnExit_Click_1(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
-        }       
+        }
+
+        private void btnImportExcel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog saveFileDialog = new OpenFileDialog();
+            saveFileDialog.DefaultExt = "*.xlsx";
+            saveFileDialog.Filter = "Excel (*.xlsx)|*.xlsx";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    product.ThemTuExcel(saveFileDialog.FileName);
+                    LoadData();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Thông báo lỗi");
+                }
+            }
+        }
+
+       
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            dgvProduct.DataSource = product.SearchLinq(txtSearch.Text);
+        }
+
+        private void btnexportWord_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Microsoft Word | *.docx";
+            saveFileDialog.Title = "Lưu thông tin lớp";
+            saveFileDialog.ShowDialog();
+            if (saveFileDialog.FileName != "")
+            {
+                try
+                {
+                    product.KetXuatWord(@"Template\SanPham.docx", saveFileDialog.FileName);
+                    MessageBox.Show("Kết xuất thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Thông báo lỗi");
+                }
+            }
+
+        }
     }
 }

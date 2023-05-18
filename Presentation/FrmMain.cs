@@ -69,7 +69,9 @@ namespace Presentation
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-           
+            this.Close();
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.Show();
         }
 
         private void FrmMain_Load(object sender, EventArgs e)

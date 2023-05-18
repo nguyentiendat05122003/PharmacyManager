@@ -3,6 +3,7 @@ using Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,8 +18,11 @@ namespace BusinessLogicLayer.Interface
         IList<Product> getAll();
 
         int checkProduct_ID(int Masanpham);
-        IList<Product> SearchLinq(Product pro);
+        List<dynamic> SearchLinq(string value);
+        void ThemTuExcel(string filePath);
 
-        List<dynamic> getAllJoin(IProviderBUL provider, IDonViTinhBUL donvi);
+        List<dynamic> getAllJoin();
+
+        void KetXuatWord(string templatePath, string exportPath);
     }
 }

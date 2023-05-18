@@ -131,7 +131,6 @@ namespace Presentation
             txtdienthoai.Text = dgvProvider[3, dgvProvider.CurrentCell.RowIndex].Value.ToString();
             txtemail.Text = dgvProvider[4, dgvProvider.CurrentCell.RowIndex].Value.ToString();
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();

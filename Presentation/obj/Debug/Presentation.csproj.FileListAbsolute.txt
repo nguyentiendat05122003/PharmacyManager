@@ -92,3 +92,4 @@ D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\bin\Debug\Microsoft.IO.Rec
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.csproj.CopyComplete
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.exe
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmImportSale.resources

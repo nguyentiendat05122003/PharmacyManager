@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bien.cs" />
     <Compile Include="FrmAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +82,12 @@
     </Compile>
     <Compile Include="FrmImportProducts.designer.cs">
       <DependentUpon>FrmImportProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmImportSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmImportSale.Designer.cs">
+      <DependentUpon>FrmImportSale.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -146,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmImportProducts.resx">
       <DependentUpon>FrmImportProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmImportSale.resx">
+      <DependentUpon>FrmImportSale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

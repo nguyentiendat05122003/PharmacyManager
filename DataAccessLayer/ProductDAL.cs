@@ -6,6 +6,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities;
+using System.Text.RegularExpressions;
 
 namespace DataAccessLayer
 {
@@ -65,7 +67,6 @@ namespace DataAccessLayer
             parm[3].Value = hansudung;
             parm[4].Value = mancc;
             parm[5].Value = madonvitinh;
-
             return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_Product_Upd", parm);
         }
      
@@ -95,5 +96,11 @@ namespace DataAccessLayer
             parm[0].Value = mathuoc;
             return (int)SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_Product_Check", parm);
         }
+
+        public int Insert(Product pro)
+        {
+            return Insert(pro.Tenthuoc, pro.Giaban, pro.Hansudung, pro.Mancc, pro.Madonvitinh);
+        }
+        
     }
 }

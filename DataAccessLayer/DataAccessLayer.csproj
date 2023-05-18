@@ -45,13 +45,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHoaDonDAL.cs" />
     <Compile Include="ClassDAL.cs" />
     <Compile Include="DonViTinhDAL.cs" />
+    <Compile Include="HoaDonDAL.cs" />
+    <Compile Include="Interface\IChiTietHoaDonDAL.cs" />
     <Compile Include="Interface\IDonViTinhDAL.cs" />
+    <Compile Include="Interface\IHoaDonDAL.cs" />
+    <Compile Include="Interface\IKhachHangDAL.cs" />
     <Compile Include="Interface\ILoaiNhanVienDAL.cs" />
     <Compile Include="Interface\INhanVienDAL.cs" />
     <Compile Include="Interface\IProductDAL.cs" />
     <Compile Include="Interface\IProviderDAL.cs" />
+    <Compile Include="Interface\ITaiKhoanDAL.cs" />
+    <Compile Include="KhachHangDAL.cs" />
     <Compile Include="LoaiNhanVienDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />
     <Compile Include="ProductDAL.cs" />
@@ -61,6 +68,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interface\IClassDAL.cs" />
     <Compile Include="Interface\IStudentDAL.cs" />
+    <Compile Include="TaiKhoanDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj">

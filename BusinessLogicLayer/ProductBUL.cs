@@ -5,6 +5,7 @@ using Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace BusinessLogicLayer
     public class ProductBUL : IProductBUL
     {
         private readonly IProductDAL dal = new ProductDAL();
+        IProviderBUL provider = new ProviderBUL();
+        IDonViTinhBUL dvt = new DonViTinhBUL();
 
         public int Insert(Product pro)
         {
@@ -71,18 +74,49 @@ namespace BusinessLogicLayer
         {
             return dal.checkProduct_ID(mathuoc);
         }
-        public IList<Product> SearchLinq(Product cls)
+        public List<dynamic> SearchLinq(string value)
         {
-            return getAll().Where(x => (string.IsNullOrEmpty(cls.Tenthuoc) || x.Tenthuoc.Contains(cls.Tenthuoc))).ToList();
-           
+            return getAllJoin().Where(x => (string.IsNullOrEmpty(value) || x.Mathuoc.ToString().Contains(value) ||
+                (x.Tenthuoc.ToString() == value) ||
+                (string.IsNullOrEmpty(value) || x.Tenthuoc.Contains(value)))).ToList();
         }
-        public List<dynamic> getAllJoin(IProviderBUL provider,IDonViTinhBUL donvi)
+        public List<dynamic> getAllJoin()
         {
             var product_provider = (from pd in getAll()
                                     join pv in provider.getAll() on pd.Mancc equals pv.Mancc
-                                    join dv in donvi.getAll() on pd.Madonvitinh equals dv.Madonvitinh
+                                    join dv in dvt.getAll() on pd.Madonvitinh equals dv.Madonvitinh
                                     select new { Mathuoc = pd.Mathuoc, Tenthuoc = pd.Tenthuoc, Giaban = pd.Giaban, Hansudung = pd.Hansudung, Mancc = pd.Mancc, Donvitinh = pd.Madonvitinh, Tenncc = pv.Tenncc,TenDonvi = dv.Tendonvitinh });
             return product_provider.Cast<dynamic>().ToList();
+        }
+
+        public void ThemTuExcel(string filePath)
+        {
+            var messageError = "";
+            var data = ExcelHelper.ReadFromExcelFile(filePath, 1, out messageError);
+            Console.Write(data);
+            if (string.IsNullOrEmpty(messageError))
+            {
+                foreach (DataRow row in data.Rows)
+                {
+                    Product nv = new Product();
+                    nv.Tenthuoc = row.Field<string>("TenThuoc");
+                    nv.Giaban =float.Parse(row.Field<string>("GiaBan"));
+                    nv.Hansudung = DateTime.ParseExact(row.Field<string>("HanSuDung"), "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                    nv.Mancc =int.Parse(row.Field<string>("MaNCC"));
+                    nv.Madonvitinh = int.Parse(row.Field<string>("MaDonViTinh"));
+                    dal.Insert(nv);
+                }
+            }
+            else throw new Exception(messageError);
+
+        }
+
+        public void KetXuatWord(string templatePath, string exportPath)
+        {
+            IList<Product> list = getAll();
+            Dictionary<string, string> dictionaryData = new Dictionary<string, string>();
+            System.IO.File.Copy(templatePath, exportPath, true);
+            ExportDocx.CreateProductTemplate(exportPath, dictionaryData, list);
         }
     }
 }
