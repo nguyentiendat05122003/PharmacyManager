@@ -24,14 +24,12 @@ namespace BusinessLogicLayer
             if (checkClass_ID(cls.ClassID) == 0)
                 return dal.Insert(cls.ClassName, Tools.ChuanHoaXau(cls.MonitorName), Tools.ChuanHoaXau(cls.TeacherName));
             else return -1;
-
         }
         /// <summary>
         /// Hàm xóa thông tin lớp học khỏi CSDL với mã lớp được chỉ định từ tầng Presentation
         /// Nếu không xóa được lớp do lớp này không tồn tại hàm trả về giá trị -1
         /// </summary>
         /// <param name="classID">Mã lớp</param>
-
         public int Delete(int classID)
         {
             if (checkClass_ID(classID) != 0)

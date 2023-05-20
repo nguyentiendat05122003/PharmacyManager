@@ -25,11 +25,7 @@ namespace BusinessLogicLayer
                 return dal.Insert(pro.Tenthuoc,pro.Giaban,pro.Hansudung,pro.Mancc,pro.Madonvitinh);
             else return -1;
         }
-        /// <summary>
-        /// Hàm xóa thông tin lớp học khỏi CSDL với mã lớp được chỉ định từ tầng Presentation
-        /// Nếu không xóa được lớp do lớp này không tồn tại hàm trả về giá trị -1
-        /// </summary>
-        /// <param name="classID">Mã lớp</param>
+       
 
         public int Delete(int productId)
         {
@@ -38,10 +34,7 @@ namespace BusinessLogicLayer
             else return -1;
         }
         /// <summary>
-        /// Hàm cập nhật lại thông tin một lớp học vào CSDL với thông tin mới được lấy từ tầng Presentation
-        /// Nếu việc cập nhật thất bại do mã lớp không tồn tại thì hàm trả về -1
-        /// </summary>
-        /// <param name="cls">Thông tin lớp mới cần được cập nhật lại vào CSDL</param>
+       
 
         public int Update(Product pro)
         {
@@ -49,9 +42,7 @@ namespace BusinessLogicLayer
                 return dal.Update(pro.Mathuoc,pro.Tenthuoc, pro.Giaban, pro.Hansudung, pro.Mancc, pro.Madonvitinh);
             else return -1;
         }
-        /// <summary>
-        /// Hàm trả về danh sách các lớp cóp trong CSDL
-        /// </summary>
+       
 
         public IList<Product> getAll()
         {

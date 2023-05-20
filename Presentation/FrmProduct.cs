@@ -42,6 +42,7 @@ namespace Presentation
             txttenthuoc.Text = "";
             txtgiaban.Text = "";
             txthansudung.Text = "";
+            txtSearch.Text = "";
             cbbDonvitinh.DataSource = donViTinh.getAll();
             cbbNcc.DataSource = provider.getAll();
         }
@@ -138,6 +139,7 @@ namespace Presentation
         private void btnReload_Click_1(object sender, EventArgs e)
         {
             ResetForm();
+            LoadData();
         }
         private void dgvProduct_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {

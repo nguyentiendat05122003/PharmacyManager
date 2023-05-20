@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,7 +53,6 @@ namespace Presentation
             {
                 makh = kh.SearchLinq(sdt)[0].Makhachhang;
             }
-            MessageBox.Show(makh.ToString());
             DateTime today = DateTime.Today;
             float tongtien = Bien.tonghoadon;
             int manv = Bien.manhanvien;
@@ -63,12 +64,14 @@ namespace Presentation
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Microsoft Word | *.docx";
             saveFileDialog.Title = "Lưu thông tin lớp";
-            saveFileDialog.ShowDialog();
-            if (saveFileDialog.FileName != "")
+            string filePath = "D:\\WorkSpace\\Đồ án 1\\Hóa Đơn\\" + "Hóa đơn" + today.Day.ToString() + "-" + today.Month.ToString() + "-" + today.Year.ToString() + "-" + makh.ToString() + ".docx";
+            FileInfo fi = new FileInfo(filePath);
+            fi.Create().Close();
+            if (fi.FullName != "")
             {
                 try
                 {
-                    chitiet.KetXuatWord(txtName.Text,maHoaDonMoiNhat,tongtien, @"Template\Chitiethoadon_Template.docx", saveFileDialog.FileName);
+                    chitiet.KetXuatWord(txtName.Text,maHoaDonMoiNhat,tongtien, @"Template\Chitiethoadon_Template.docx", fi.FullName);
                     MessageBox.Show("Kết xuất thành công!");
                 }
                 catch (Exception ex)

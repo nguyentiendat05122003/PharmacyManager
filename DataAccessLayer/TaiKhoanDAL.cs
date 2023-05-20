@@ -20,7 +20,7 @@ namespace DataAccessLayer
             SqlParameter[] parm = new SqlParameter[]
             {
                 new SqlParameter(PARM_TENTK,SqlDbType.VarChar,50),
-                new SqlParameter(PARM_MATKHAU,SqlDbType.VarChar,50),
+                new SqlParameter(PARM_MATKHAU,SqlDbType.VarChar,100),
                 new SqlParameter(PARM_MANV,SqlDbType.Int),
             };
             parm[0].Value = tentaikhoan;
@@ -68,8 +68,7 @@ namespace DataAccessLayer
             }
             dra.Dispose();
             return table;
-        }   
-            
+        }              
         public int checkTaiKhoan_ID(int matk)
         {
             SqlParameter[] parm = new SqlParameter[]

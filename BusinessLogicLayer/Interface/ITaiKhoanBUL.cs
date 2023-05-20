@@ -14,5 +14,13 @@ namespace BusinessLogicLayer.Interface
         int Update(TaiKhoan cls);
         IList<TaiKhoan> getAll();
         int checkTaiKhoan_ID(int classID);
+
+        bool checkTaiKhoan_IsExist(string tk, string mk);
+
+        string HashPassword(string password);
+        TaiKhoan TaiKhoanLogin(string tk, string mk);
+        NhanVien GetNhanVien(int manv);
+
+        bool VerifyPassword(string password, string savedPasswordHash);
     }
 }

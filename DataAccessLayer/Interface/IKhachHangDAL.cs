@@ -11,7 +11,7 @@ namespace DataAccessLayer.Interface
     {
         int Insert(string hoten, string diachi, string dienthoai, string email);
         int Delete(int makh);
-        int Update(int mancc, string tenncc, string diachi, string dienthoai, string email);
+        int Update(int makh, string hoten, string diachi, string dienthoai, string email);
         DataTable getAll();
         int checkKh_ID(int makh);
     }

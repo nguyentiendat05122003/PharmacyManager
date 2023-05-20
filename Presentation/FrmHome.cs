@@ -22,7 +22,7 @@ namespace Presentation
         {
             System.Windows.Forms.Application.Exit();
         }
-
+       
         private void FrmHome_Load(object sender, EventArgs e)
         {
             //    LbDate.Text = DateTime.Now.ToString();
@@ -33,8 +33,16 @@ namespace Presentation
             //    chartRevenue.Series["SeriesRevenue"].Points.AddXY("5", 700);
             //    chartRevenue.Series["SeriesRevenue"].Points.AddXY("6", 1000);
             //}
+            lbtentk.Text = Bien.username.ToString();
+            lbchucvu.Text = Bien.chucvu.ToString();          
+        }
 
+       
 
+        private void btnTK_Click(object sender, EventArgs e)
+        {
+            FrmTaiKhoan frm = new FrmTaiKhoan();
+            frm.ShowDialog();
         }
     }
 }

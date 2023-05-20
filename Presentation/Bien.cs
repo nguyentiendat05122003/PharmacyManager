@@ -11,6 +11,8 @@ namespace Presentation
         public static int tientra;
         public static float tonghoadon;
         public static string username;
-        public static int manhanvien = 13;
+        public static int manhanvien;
+        public static int loainv;
+        public static string chucvu;
     }
 }
