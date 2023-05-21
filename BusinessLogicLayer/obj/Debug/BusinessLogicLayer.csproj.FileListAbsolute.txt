@@ -117,3 +117,5 @@ D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\obj\Debug\BusinessLo
 D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CopyComplete
 D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
 D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Security.Cryptography.Cng.dll
+D:\WorkSpace\Đồ án 1\PharmacyManager\BusinessLogicLayer\bin\Debug\System.Security.Cryptography.Cng.xml

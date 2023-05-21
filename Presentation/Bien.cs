@@ -14,5 +14,6 @@ namespace Presentation
         public static int manhanvien;
         public static int loainv;
         public static string chucvu;
+        public static string key = "ThisIsASecretKey12345";
     }
 }

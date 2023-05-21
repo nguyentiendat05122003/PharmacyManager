@@ -20,6 +20,7 @@ namespace Presentation
         public FrmLogin()
         {
             InitializeComponent();
+            txtUserName.Focus();
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)

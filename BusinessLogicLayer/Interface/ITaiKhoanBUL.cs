@@ -17,10 +17,11 @@ namespace BusinessLogicLayer.Interface
 
         bool checkTaiKhoan_IsExist(string tk, string mk);
 
-        string HashPassword(string password);
+        string HashPassword(string password, int iterations, int SaltSize , int HashSize);
         TaiKhoan TaiKhoanLogin(string tk, string mk);
         NhanVien GetNhanVien(int manv);
 
-        bool VerifyPassword(string password, string savedPasswordHash);
+        bool DecodePassword(string password, string hashedPassword, int SaltSize,int HashSize);
+        string Encrypt(string mk);
     }
 }

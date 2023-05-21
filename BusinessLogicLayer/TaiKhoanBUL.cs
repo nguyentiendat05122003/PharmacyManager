@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Utility;
 using System.Security.Cryptography;
+using System.IO;
 
 namespace BusinessLogicLayer
 {
@@ -57,8 +58,9 @@ namespace BusinessLogicLayer
         }
         public bool checkTaiKhoan_IsExist(string tk,string mk)
         {
-            bool isAccountExist = getAll().Any(account => {
-                return account.Tentaikhoan == tk && account.Matkhau==mk;
+            bool isAccountExist = getAll().Any(account =>
+            {
+                return account.Tentaikhoan == tk && mk == account.Matkhau;
             });
             return isAccountExist;
         }
@@ -79,64 +81,113 @@ namespace BusinessLogicLayer
             NhanVien thongtinnv = nv.getAll().FirstOrDefault(t => t.MaNhanVien ==manv);
             return thongtinnv;
         }
-        public string HashPassword(string password)
-        {
-            byte[] salt = new byte[16];
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(salt);
-            }
+        //mã hóa
+        public string HashPassword(string password, int iterations, int SaltSize ,int HashSize)
+        {         
+            byte[] salt;
+            new RNGCryptoServiceProvider().GetBytes(salt = new byte[SaltSize]);
 
-            // Sử dụng PBKDF2 để mã hóa mật khẩu
-            var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 10000);
-            byte[] hash = pbkdf2.GetBytes(20);
+            // Create hash
+            var pbkdf2 = new Rfc2898DeriveBytes(password, salt, iterations);
+            var hash = pbkdf2.GetBytes(HashSize);
 
-            // Kết hợp muối và hash để lưu trữ trong cơ sở dữ liệu
-            byte[] hashBytes = new byte[36];
-            Array.Copy(salt, 0, hashBytes, 0, 16);
-            Array.Copy(hash, 0, hashBytes, 16, 20);
+            // Combine salt and hash
+            var hashBytes = new byte[SaltSize + HashSize];
+            Array.Copy(salt, 0, hashBytes, 0, SaltSize);
+            Array.Copy(hash, 0, hashBytes, SaltSize, HashSize);
 
-            // Chuyển đổi sang chuỗi Base64 để lưu trữ
-            string savedPasswordHash = Convert.ToBase64String(hashBytes);
+            // Convert to base64
+            var base64Hash = Convert.ToBase64String(hashBytes);
 
-            return savedPasswordHash;
+            // Format hash with extra information
+            return string.Format("$MYHASH$V1${0}${1}", iterations, base64Hash);
         }
 
-        public bool VerifyPassword(string password, string savedPasswordHash)
+        //giải mã
+        public bool DecodePassword(string password, string hashedPassword, int SaltSize, int HashSize)
         {
-            byte[] hashBytes = Convert.FromBase64String(savedPasswordHash);
+            // Extract iteration and Base64 string
+            var splittedHashString = hashedPassword.Replace("$MYHASH$V1$", "").Split('$');
+            var iterations = int.Parse(splittedHashString[0]);
+            var base64Hash = splittedHashString[1];
 
-            // Kiểm tra kích thước của hashBytes
-            if (hashBytes.Length != 36)
+            // Get hash bytes
+            var hashBytes = Convert.FromBase64String(base64Hash);
+
+            // Get salt
+            var salt = new byte[SaltSize];
+            var storedHash = new byte[HashSize];
+
+            // Check if the hashBytes length is valid
+            if (hashBytes.Length >= SaltSize + HashSize)
             {
-                // Kích thước không hợp lệ
-                return false;
+                Array.Copy(hashBytes, 0, salt, 0, SaltSize);
+                Array.Copy(hashBytes, SaltSize, storedHash, 0, HashSize);
             }
 
-            // Lấy muối từ mảng byte
-            byte[] salt = new byte[16];
-            Array.Copy(hashBytes, 0, salt, 0, 16);
+            // Create hash with given salt
+            var pbkdf2 = new Rfc2898DeriveBytes(password, salt, iterations);
+            byte[] hash = pbkdf2.GetBytes(HashSize);
 
-            // Lấy hash từ mảng byte
-            byte[] hash = new byte[20];
-            Array.Copy(hashBytes, 16, hash, 0, 20);
-
-            // Sử dụng PBKDF2 để kiểm tra mật khẩu
-            using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 10000))
+            // Get result
+            for (var i = 0; i < HashSize; i++)
             {
-                byte[] testHash = pbkdf2.GetBytes(20);
-
-                // So sánh hai mảng hash
-                for (int i = 0; i < 20; i++)
+                if (storedHash[i] != hash[i])
                 {
-                    if (hash[i] != testHash[i])
-                    {
-                        return false;
-                    }
+                    return false;
                 }
             }
 
             return true;
+        }
+
+        
+
+        public  string Encrypt(string plainText)
+        {
+            byte[] encryptedBytes;
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = Encoding.UTF8.GetBytes("ThisIsASecretKey12345");
+                aesAlg.IV = Encoding.UTF8.GetBytes("ThisIsAnIV1234567");
+
+                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                        {
+                            swEncrypt.Write(plainText);
+                        }
+                        encryptedBytes = msEncrypt.ToArray();
+                    }
+                }
+            }
+            return Convert.ToBase64String(encryptedBytes);
+        }
+
+        public  string Decrypt(string encryptedText)
+        {
+            byte[] cipherBytes = Convert.FromBase64String(encryptedText);
+            string plainText;
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = Encoding.UTF8.GetBytes("ThisIsASecretKey12345"); ;
+                aesAlg.IV = Encoding.UTF8.GetBytes("ThisIsAnIV1234567");
+                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+                using (MemoryStream msDecrypt = new MemoryStream(cipherBytes))
+                {
+                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+                            plainText = srDecrypt.ReadToEnd();
+                        }
+                    }
+                }
+            }
+            return plainText;
         }
     }
 }

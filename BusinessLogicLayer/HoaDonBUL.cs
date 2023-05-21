@@ -65,6 +65,9 @@ namespace BusinessLogicLayer
         {
             return getAll().Where(x => (string.IsNullOrEmpty(cls.Mahoadon.ToString()) || x.Mahoadon.ToString().Contains(cls.Mahoadon.ToString()))).ToList();
         }
-
+        public float GetDoanhThu(int month,int year)
+        {
+            return dal.GetDoanhThu(month,year);
+        }
     }
 }

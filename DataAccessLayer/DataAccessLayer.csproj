@@ -55,12 +55,14 @@
     <Compile Include="Interface\IKhachHangDAL.cs" />
     <Compile Include="Interface\ILoaiNhanVienDAL.cs" />
     <Compile Include="Interface\INhanVienDAL.cs" />
+    <Compile Include="Interface\IPhieuNhapDAL.cs" />
     <Compile Include="Interface\IProductDAL.cs" />
     <Compile Include="Interface\IProviderDAL.cs" />
     <Compile Include="Interface\ITaiKhoanDAL.cs" />
     <Compile Include="KhachHangDAL.cs" />
     <Compile Include="LoaiNhanVienDAL.cs" />
     <Compile Include="NhanVienDAL.cs" />
+    <Compile Include="PhieuNhapDAL.cs" />
     <Compile Include="ProductDAL.cs" />
     <Compile Include="ProviderDAL.cs" />
     <Compile Include="StudentDAL.cs" />

@@ -102,14 +102,14 @@
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.IconRightOffset = new System.Drawing.Point(10, 0);
             this.txtPassword.IconRightSize = new System.Drawing.Size(30, 30);
-            this.txtPassword.Location = new System.Drawing.Point(914, 449);
+            this.txtPassword.Location = new System.Drawing.Point(929, 453);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
             this.txtPassword.PlaceholderText = "";
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(470, 50);
-            this.txtPassword.TabIndex = 10;
+            this.txtPassword.TabIndex = 1;
             // 
             // label3
             // 
@@ -140,20 +140,20 @@
             this.txtUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUserName.Location = new System.Drawing.Point(914, 328);
+            this.txtUserName.Location = new System.Drawing.Point(929, 328);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PasswordChar = '\0';
             this.txtUserName.PlaceholderText = "";
             this.txtUserName.SelectedText = "";
             this.txtUserName.Size = new System.Drawing.Size(470, 50);
-            this.txtUserName.TabIndex = 13;
+            this.txtUserName.TabIndex = 0;
             // 
             // pcbEye
             // 
             this.pcbEye.Image = global::Presentation.Properties.Resources._211739_eye_icon;
             this.pcbEye.ImageRotate = 0F;
-            this.pcbEye.Location = new System.Drawing.Point(1324, 453);
+            this.pcbEye.Location = new System.Drawing.Point(1327, 460);
             this.pcbEye.Name = "pcbEye";
             this.pcbEye.Size = new System.Drawing.Size(42, 40);
             this.pcbEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

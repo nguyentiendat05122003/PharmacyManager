@@ -42,7 +42,7 @@ namespace Presentation
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string password = txtmk.Text;
-            string hashedPassword = tk.HashPassword(password);
+            string hashedPassword = tk.Encrypt(password);
             if (txttentk.Text == "" || txtmk.Text == "" || cbbManv.ValueMember == "")
                 MessageBox.Show("Dữ liệu chưa đủ, xin hãy nhập lại!", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else

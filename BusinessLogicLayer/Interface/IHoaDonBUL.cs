@@ -17,5 +17,6 @@ namespace BusinessLogicLayer.Interface
 
         int checkHoaDon_ID(int classID);
 
+        float GetDoanhThu(int month,int year);
     }
 }
