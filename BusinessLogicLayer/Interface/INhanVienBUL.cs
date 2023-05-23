@@ -14,10 +14,9 @@ namespace BusinessLogicLayer.Interface
         int Update(NhanVien nv);
         IList<NhanVien> getAll();
         IList<NhanVien> SearchLinq(string value);
-        void ThemTuExcel(string filePath);
         void KetXuatWord(string templatePath, string exportPath);
 
-        List<dynamic> getAllJoin(ILoaiNhanVienBUL loainv);
+        List<dynamic> getAllJoin();
 
     }
 }

@@ -20,7 +20,8 @@ namespace DataAccessLayer
         private const string PARM_EMAIL = "@Email";
         private const string PARM_NGAYSINH = "@NgaySinh";
         private const string PARM_GIOITINH = "@GioiTinh";
-        public int Insert(int vaitro, string hoten, bool gioitinh, DateTime ngaysinh, string diachi, string dienthoai, string email)
+        private const string PARM_THOIVIEC = "@DaThoiViec";
+        public int Insert(int vaitro, string hoten, bool gioitinh, DateTime ngaysinh, string diachi, string dienthoai, string email,bool dathoiviec)
         {
             SqlParameter[] parm = new SqlParameter[]
             {
@@ -31,6 +32,7 @@ namespace DataAccessLayer
                 new SqlParameter(PARM_DIACHI,SqlDbType.NVarChar,50),
                 new SqlParameter(PARM_DIENTHOAI,SqlDbType.NVarChar,50),
                 new SqlParameter(PARM_EMAIL,SqlDbType.NVarChar,50),
+                new SqlParameter(PARM_THOIVIEC,SqlDbType.Bit),
             };
             parm[0].Value = vaitro;
             parm[1].Value = hoten;
@@ -39,55 +41,8 @@ namespace DataAccessLayer
             parm[4].Value = diachi;
             parm[5].Value = dienthoai;
             parm[6].Value = email;
-            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_NhanVien_Ins", parm);
-        }
-        public int Insert(NhanVien nv)
-        {
-            SqlParameter[] parm = new SqlParameter[]
-           {
-                new SqlParameter(PARM_VAITRO,SqlDbType.Int),
-                new SqlParameter(PARM_HOTEN,SqlDbType.NVarChar,50),
-                new SqlParameter(PARM_GIOITINH,SqlDbType.Bit),
-                new SqlParameter(PARM_NGAYSINH,SqlDbType.DateTime),
-                new SqlParameter(PARM_DIACHI,SqlDbType.NVarChar,50),
-                new SqlParameter(PARM_DIENTHOAI,SqlDbType.NVarChar,50),
-                new SqlParameter(PARM_EMAIL,SqlDbType.NVarChar,50),
-           };
-            if (string.IsNullOrEmpty(nv.VaiTro.ToString()))
-                parm[0].Value = DBNull.Value;
-            else
-                parm[0].Value = nv.VaiTro;
-
-            if (nv.Hoten == null)
-                parm[1].Value = DBNull.Value;
-            else
-                parm[1].Value = nv.Hoten;
-
-            if (string.IsNullOrEmpty(nv.Gioitinh.ToString()))
-                parm[2].Value = DBNull.Value;
-            else
-                parm[2].Value = nv.Gioitinh;
-
-
-            if (string.IsNullOrEmpty(nv.Ngaysinh.ToString()))
-                parm[3].Value = DBNull.Value;
-            else
-                parm[3].Value = nv.Ngaysinh;
-
-            if (string.IsNullOrEmpty(nv.Diachi))
-                parm[4].Value = DBNull.Value;
-            else
-                parm[4].Value = nv.Diachi;
-
-            if (string.IsNullOrEmpty(nv.Dienthoai))
-                parm[5].Value = DBNull.Value;
-            else
-                parm[5].Value = nv.Dienthoai;
-            if (string.IsNullOrEmpty(nv.Email))
-                parm[6].Value = DBNull.Value;
-            else
-                parm[6].Value = nv.Email;
-            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "[tbl_NhanVien_Ins]", parm);
+            parm[7].Value = dathoiviec;
+            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_NhanVien_Insert", parm);
         }
         public DataTable getAll()
         {
@@ -101,12 +56,12 @@ namespace DataAccessLayer
             table.Columns.Add("DiaChi", typeof(string));
             table.Columns.Add("DienThoai", typeof(string));
             table.Columns.Add("Email", typeof(string));
+            table.Columns.Add("DaThoiViec", typeof(bool));
             while (dra.Read())
             {
-                table.Rows.Add(int.Parse(dra["MaNhanVien"].ToString()), int.Parse(dra["MaLoai"].ToString()), dra["HoTen"].ToString(), dra["GioiTinh"].ToString(), dra["NgaySinh"].ToString(), dra["DiaChi"].ToString(), dra["DienThoai"].ToString(), dra["Email"].ToString());
+                table.Rows.Add(int.Parse(dra["MaNhanVien"].ToString()), int.Parse(dra["MaLoai"].ToString()), dra["HoTen"].ToString(), dra["GioiTinh"].ToString(), dra["NgaySinh"].ToString(), dra["DiaChi"].ToString(), dra["DienThoai"].ToString(), dra["Email"].ToString(), dra["DaThoiViec"].ToString());
             }
-            dra.Dispose();
-            Console.WriteLine(table);
+            dra.Dispose();          
             return table;
         }
         public int Delete(int NhanVienID)
@@ -116,8 +71,6 @@ namespace DataAccessLayer
                 new SqlParameter(PARM_NHANVIENID,SqlDbType.Int)
             };
             parm[0].Value = NhanVienID;
-            Console.WriteLine(NhanVienID);
-
             return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_NhanViesn_Del", parm);
         }
         public int checkNhanVien_ID(int nhanvienID)
@@ -129,7 +82,7 @@ namespace DataAccessLayer
             parm[0].Value = nhanvienID;
             return (int)SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_NhanViens_Check", parm);
         }
-        public int Update(int nhanvienID, int vaitro, string hoten, bool gioitinh, DateTime ngaysinh, string diachi, string dienthoai, string email)
+        public int Update(int nhanvienID, int vaitro, string hoten, bool gioitinh, DateTime ngaysinh, string diachi, string dienthoai, string email,bool dathoiviec)
         {
             SqlParameter[] parm = new SqlParameter[]
             {
@@ -141,6 +94,7 @@ namespace DataAccessLayer
                 new SqlParameter(PARM_DIACHI,SqlDbType.NVarChar,50),
                 new SqlParameter(PARM_DIENTHOAI,SqlDbType.NVarChar,50),
                 new SqlParameter(PARM_EMAIL,SqlDbType.NVarChar,50),
+                new SqlParameter(PARM_THOIVIEC,SqlDbType.Bit),
 
             };
             parm[0].Value = nhanvienID;
@@ -151,7 +105,8 @@ namespace DataAccessLayer
             parm[5].Value = diachi;
             parm[6].Value = dienthoai;
             parm[7].Value = email;
-            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_NhanVien_Upd", parm);
+            parm[8].Value = dathoiviec;
+            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_NhanVien_Update", parm);
         }
     }
 }

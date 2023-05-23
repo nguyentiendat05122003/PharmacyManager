@@ -247,15 +247,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietHoaDonBUL.cs" />
+    <Compile Include="ChiTietPhieuNhapBUL.cs" />
     <Compile Include="ClassBUL.cs" />
     <Compile Include="CustomExport\ExportDocx.cs" />
     <Compile Include="DonViTinhBUL.cs" />
     <Compile Include="Helper\DocxHelper.cs" />
     <Compile Include="Helper\ExcelHelper.cs" />
-    <Compile Include="HoaDonBUL.cs" />
+    <Compile Include="HoaDonBanBUL.cs" />
     <Compile Include="Interface\IChiTietHoaDonBUL.cs" />
+    <Compile Include="Interface\IChiTietPhieuNhapBUL.cs" />
     <Compile Include="Interface\IDonViTinhBUL.cs" />
-    <Compile Include="Interface\IHoaDonBUL.cs" />
+    <Compile Include="Interface\IHoaDonBanBUL.cs" />
     <Compile Include="Interface\IKhachHangBUL.cs" />
     <Compile Include="Interface\ILoaiNhanVienBUL.cs" />
     <Compile Include="Interface\INhanVienBUL.cs" />

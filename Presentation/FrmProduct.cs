@@ -16,10 +16,6 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Presentation
 {
-    //foreach (object item in product_provider)
-    //{
-    //    string maSP = (string)item.GetType().GetProperty("Tenncc").GetValue(item, null);
-    //}
     public partial class FrmProduct : Form
     {
         IProductBUL product = new ProductBUL();
@@ -33,8 +29,8 @@ namespace Presentation
         {
             var product_provider = product.getAllJoin();
             dgvProduct.DataSource = product_provider;
-            cbbNcc.DataSource = provider.getAll();
             cbbDonvitinh.DataSource = donViTinh.getAll();
+            dgvProduct_CellFormatting();
         }
         private void ResetForm()
         {
@@ -44,7 +40,7 @@ namespace Presentation
             txthansudung.Text = "";
             txtSearch.Text = "";
             cbbDonvitinh.DataSource = donViTinh.getAll();
-            cbbNcc.DataSource = provider.getAll();
+            txtsoluong.Text = "";
         }
         private void SetDisplayCbb(System.Windows.Forms.ComboBox cbb,string value,string name)
         {
@@ -58,20 +54,21 @@ namespace Presentation
             txtmathuoc.Text = "Mã thuốc tự động tăng!";        
             dgvProduct.AutoGenerateColumns = false;
             dgvProduct.DataSource = product_provider;
-            cbbNcc.DataSource = provider.getAll();            
-            SetDisplayCbb(cbbNcc, "MaNCC", "TenNCC");
-            cbbDonvitinh.DataSource = donViTinh.getAll();
-            SetDisplayCbb(cbbDonvitinh, "MaDonViTinh", "TenDonViTinh");         
-        }                        
+            cbbDonvitinh.DataSource = donViTinh.getAll();          
+            SetDisplayCbb(cbbDonvitinh, "MaDonViTinh", "TenDonViTinh");
+            dgvProduct_CellFormatting();
+            dgvProduct.CellFormatting += dgvProduct_CellFormatting;
+            dgvProduct.RowPrePaint += dgvProduct_RowPrePaint;
+        }
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            if (txttenthuoc.Text == "" || txtgiaban.Text == "" || cbbDonvitinh.ValueMember == "" || cbbNcc.ValueMember == "")
+            if (txttenthuoc.Text == "" || txtgiaban.Text == "" || cbbDonvitinh.ValueMember == "")
                 MessageBox.Show("Dữ liệu chưa đủ, xin hãy nhập lại!", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 try
                 {
-                    int val = product.Insert(new Product(txttenthuoc.Text, float.Parse(txtgiaban.Text),DateTime.Parse(txthansudung.Text), ((int)cbbNcc.SelectedValue),(int)cbbDonvitinh.SelectedValue));
+                    int val = product.Insert(new Product(txttenthuoc.Text, float.Parse(txtgiaban.Text), DateTime.Parse(txthansudung.Text), rdbYes.Checked, (int)cbbDonvitinh.SelectedValue, int.Parse(txtsoluong.Text)));
                     LoadData();
                     if (val == -1)
                         MessageBox.Show("Thêm dữ liệu không thành công, hãy kiểm tra lại!", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -96,8 +93,9 @@ namespace Presentation
             pro.Tenthuoc = txttenthuoc.Text;
             pro.Giaban = int.Parse(txtgiaban.Text);
             pro.Hansudung = DateTime.Parse(txthansudung.Text);
-            pro.Mancc = (int)cbbNcc.SelectedValue;
             pro.Madonvitinh = (int)cbbDonvitinh.SelectedValue;
+            pro.Dungkinhdoanh = rdbYes.Checked;
+            pro.Soluong = int.Parse(txtsoluong.Text);
             try
             {
                 int val = product.Update(pro);
@@ -147,8 +145,17 @@ namespace Presentation
             txttenthuoc.Text = dgvProduct[1, dgvProduct.CurrentCell.RowIndex].Value.ToString();
             txtgiaban.Text = dgvProduct[2, dgvProduct.CurrentCell.RowIndex].Value.ToString();
             txthansudung.Text = Utility.Tools.CatXauDate(dgvProduct[3, dgvProduct.CurrentCell.RowIndex].Value.ToString());
-            cbbNcc.Text =  dgvProduct[4, dgvProduct.CurrentCell.RowIndex].Value.ToString();
-            cbbDonvitinh.Text = dgvProduct[5, dgvProduct.CurrentCell.RowIndex].Value.ToString();
+            string state = dgvProduct[6, dgvProduct.CurrentCell.RowIndex].Value.ToString();
+            if (state == "True")
+            {
+                rdbYes.Checked = true;
+            }
+            else if (state == "False")
+            {
+                rdbNo.Checked = true;
+            }
+            txtsoluong.Text = dgvProduct[5, dgvProduct.CurrentCell.RowIndex].Value.ToString();
+            cbbDonvitinh.Text = dgvProduct[4, dgvProduct.CurrentCell.RowIndex].Value.ToString();
         }
         private void btnExit_Click_1(object sender, EventArgs e)
         {
@@ -201,5 +208,27 @@ namespace Presentation
             }
 
         }
+
+        private void dgvProduct_CellFormatting()
+        {
+            
+        }
+
+        private void dgvProduct_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+            
+
+        }
+
+        private void dgvProduct_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (dgvProduct.Rows[e.RowIndex].Cells[6].Value is bool && !(bool)dgvProduct.Rows[e.RowIndex].Cells[6].Value)
+            {
+                dgvProduct.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
+                dgvProduct.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Red;
+            }
+        }
     }
 }
+

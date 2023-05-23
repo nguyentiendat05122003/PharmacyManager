@@ -18,7 +18,7 @@ namespace BusinessLogicLayer
         public int Insert(KhachHang cls)
         {
             if (checkkh_ID(cls.Makhachhang) == 0)
-                return dal.Insert(cls.Hoten, cls.Diachi, cls.Dienthoai, cls.Email);
+                return dal.Insert(cls.Hoten, cls.Diachi, cls.Dienthoai, cls.Email,cls.Daxoa);
             else return -1;
         }
         public int Delete(int mancc)
@@ -34,7 +34,7 @@ namespace BusinessLogicLayer
         public int Update(KhachHang cls)
         {
             if (checkkh_ID(cls.Makhachhang) != 0)
-                return dal.Update(cls.Makhachhang, cls.Hoten, cls.Diachi, cls.Dienthoai, cls.Email);
+                return dal.Update(cls.Makhachhang, cls.Hoten, cls.Diachi, cls.Dienthoai, cls.Email,cls.Daxoa);
             else return -1;
         }
 
@@ -50,6 +50,7 @@ namespace BusinessLogicLayer
                 cls.Diachi = row.Field<string>(2);
                 cls.Dienthoai = row.Field<string>(3);
                 cls.Email = row.Field<string>(4);
+                cls.Daxoa = row.Field<bool>(5);
                 list.Add(cls);
             }
             return list;

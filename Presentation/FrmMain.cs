@@ -77,6 +77,13 @@ namespace Presentation
         private void FrmMain_Load(object sender, EventArgs e)
         {
             OpenchildForm(new FrmHome());
+            if(Bien.loainv == 2)
+            {
+                btnEmployee.Visible = false;
+                btnProvider.Top = btnProvider.Top - btnEmployee.Height;
+                btnCustomer.Top = btnCustomer.Top - btnEmployee.Height;
+                btnLogout.Top = btnLogout.Top - btnEmployee.Height;
+            }
         }
 
         private void pnlBody_Paint(object sender, PaintEventArgs e)

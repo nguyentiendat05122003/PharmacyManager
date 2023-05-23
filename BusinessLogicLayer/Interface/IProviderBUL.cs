@@ -14,6 +14,10 @@ namespace BusinessLogicLayer.Interface
         int Update(Provider cls);
         IList<Provider> getAll();
         int checkNCC_ID(int mancc);
-        IList<Provider> SearchLinq(Provider cls);
+        IList<Provider> SearchLinq(string cls);
+
+        IList<Provider> GetProviderIsContact();
+
+        string GetProviderName(int mancc);
     }
 }

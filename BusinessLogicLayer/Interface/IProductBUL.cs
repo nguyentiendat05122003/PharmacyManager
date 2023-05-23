@@ -20,9 +20,9 @@ namespace BusinessLogicLayer.Interface
         int checkProduct_ID(int Masanpham);
         List<dynamic> SearchLinq(string value);
         void ThemTuExcel(string filePath);
-
         List<dynamic> getAllJoin();
-
         void KetXuatWord(string templatePath, string exportPath);
+
+        int GetSoluong(int mathuoc);      
     }
 }

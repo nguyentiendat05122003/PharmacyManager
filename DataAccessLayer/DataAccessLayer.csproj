@@ -46,10 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietHoaDonDAL.cs" />
+    <Compile Include="ChiTietPhieuNhapDAL.cs" />
     <Compile Include="ClassDAL.cs" />
     <Compile Include="DonViTinhDAL.cs" />
     <Compile Include="HoaDonDAL.cs" />
     <Compile Include="Interface\IChiTietHoaDonDAL.cs" />
+    <Compile Include="Interface\IChiTietPhieuNhapDAL.cs" />
     <Compile Include="Interface\IDonViTinhDAL.cs" />
     <Compile Include="Interface\IHoaDonDAL.cs" />
     <Compile Include="Interface\IKhachHangDAL.cs" />

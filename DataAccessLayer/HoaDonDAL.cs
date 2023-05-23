@@ -32,9 +32,8 @@ namespace DataAccessLayer
             parm[1].Value = tongtien;
             parm[2].Value = makhachhang;
             parm[3].Value = manhanvien;
-            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_HoaDon_Ins", parm);
-        }
-       
+            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_HoaDon_Insert", parm);
+        }     
         public int Delete(int classID)
         {
             SqlParameter[] parm = new SqlParameter[]
@@ -43,7 +42,7 @@ namespace DataAccessLayer
             };
             parm[0].Value = classID;
 
-            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_HoaDon_Del", parm);
+            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_HoaDon_Delete", parm);
         }       
         public int Update(int mahoadon, DateTime ngaylap, float tongtien, int makhachhang, int manhanvien)
         {
@@ -60,14 +59,14 @@ namespace DataAccessLayer
             parm[2].Value = tongtien;
             parm[3].Value = makhachhang;
             parm[4].Value = manhanvien;
-            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_HoaDon_Upd", parm);
+            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_HoaDon_Update", parm);
         }
         /// <summary>
         /// Hàm lấy về toàn bộ các lớp có trong CSDL
         /// </summary> 
         public DataTable getAll()
         {
-            SqlDataReader dra = SqlHelper.ExecuteReader(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_HoaDon_Sel_All", null);
+            SqlDataReader dra = SqlHelper.ExecuteReader(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_HoaDonBan_Sel_All", null);
             DataTable table = new DataTable();
             table.Columns.Add("MaHoaDon", typeof(int));
             table.Columns.Add("NgayLap", typeof(DateTime));
@@ -89,7 +88,7 @@ namespace DataAccessLayer
                 new SqlParameter(PARM_HOADONID,SqlDbType.Int)
             };
             parm[0].Value = classID;
-            return (int)SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_HoaDon_Check", parm);
+            return (int)SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_HoaDonBan_Check", parm);
         }
 
         public float GetDoanhThu(int month, int year)
@@ -101,7 +100,7 @@ namespace DataAccessLayer
             };
             parm[0].Value = month;
             parm[1].Value = year;
-            object result = SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, "GetMonthlyRevenue", parm);
+            object result = SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, "GetMonthlyRevenues", parm);
             float doanhThu = (result == null || result == DBNull.Value) ? 0 : Convert.ToSingle(result);
             return doanhThu;
         }

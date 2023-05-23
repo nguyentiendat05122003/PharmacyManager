@@ -18,7 +18,7 @@ namespace Presentation
     public partial class FrmImportSale : Form
     {
         IKhachHangBUL kh = new KhachHangBUL();
-        IHoaDonBUL hoadon = new HoaDonBUL();
+        IHoaDonBanBUL hoadon = new HoaDonBanBUL();
         IChiTietHoaDonBUL chitiet = new ChiTietHoaDonBUL();
         FrmSaleProducts frm;
         public FrmImportSale(FrmSaleProducts frm1)
@@ -38,10 +38,10 @@ namespace Presentation
         }
 
         private void btnPay_Click(object sender, EventArgs e)
-        {          
+        {
             if(!cbIsExit.Checked)
             {
-                kh.Insert(new Entities.KhachHang(txtName.Text,"", txtPhone.Text,""));
+                kh.Insert(new Entities.KhachHang(txtName.Text,"", txtPhone.Text,"",true));
             }         
             string sdt = txtPhone.Text;
             int makh;
@@ -56,22 +56,22 @@ namespace Presentation
             DateTime today = DateTime.Today;
             float tongtien = Bien.tonghoadon;
             int manv = Bien.manhanvien;
-            hoadon.Insert(new Entities.HoaDon(today,tongtien,makh,manv));
-            List<HoaDon> danhSachSapXep = hoadon.getAll().OrderByDescending(hd => hd.Mahoadon).ToList();
+            hoadon.Insert(new HoaDonBan(today,tongtien,makh,manv));
+            List<HoaDonBan> danhSachSapXep = hoadon.getAll().OrderByDescending(hd => hd.Mahoadon).ToList();           
             // Lấy mã hóa đơn mới nhất
             int maHoaDonMoiNhat = danhSachSapXep.First().Mahoadon;
             frm.InsertChiTietHoaDon();
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Microsoft Word | *.docx";
             saveFileDialog.Title = "Lưu thông tin lớp";
-            string filePath = "D:\\WorkSpace\\Đồ án 1\\Hóa Đơn\\" + "Hóa đơn" + today.Day.ToString() + "-" + today.Month.ToString() + "-" + today.Year.ToString() + "-" + makh.ToString() + ".docx";
+            string filePath = "D:\\WorkSpace\\Đồ án 1\\Hóa Đơn\\" + "Hóa đơn " + maHoaDonMoiNhat + " " +Bien.username + "-" + txtName.Text + ".docx";
             FileInfo fi = new FileInfo(filePath);
             fi.Create().Close();
             if (fi.FullName != "")
             {
                 try
                 {
-                    chitiet.KetXuatWord(txtName.Text,maHoaDonMoiNhat,tongtien, @"Template\Chitiethoadon_Template.docx", fi.FullName);
+                    chitiet.KetXuatWord(txtName.Text,maHoaDonMoiNhat,tongtien,Bien.username,@"Template\Chitiethoadon_Template.docx", fi.FullName);
                     MessageBox.Show("Kết xuất thành công!");
                 }
                 catch (Exception ex)

@@ -19,21 +19,16 @@ namespace Presentation
     {
         IProductBUL product = new ProductBUL();
         IChiTietHoaDonBUL chitiethd = new ChiTietHoaDonBUL();
-        IHoaDonBUL hoadon = new HoaDonBUL();
+        IHoaDonBanBUL hoadon = new HoaDonBanBUL();
         public void InsertChiTietHoaDon()
         {
             foreach (DataGridViewRow row in dgvhoadon.Rows)
             {
-                //kh.SearchLinq(value)[0].Hoten;
-                string nameProduct = row.Cells[0].Value.ToString();
-                int soluong =int.Parse(row.Cells[2].Value.ToString());
-                int mathuoc = product.getAll().Where(t => t.Tenthuoc == nameProduct)
-                         .Select(t => t.Mathuoc)
-                         .FirstOrDefault();
-                MessageBox.Show(mathuoc.ToString());
-                float priceProduct = float.Parse(row.Cells[1].Value.ToString());
-                int mahoadon = (int)hoadon.getAll().OrderByDescending(hd => hd.Mahoadon).FirstOrDefault()?.Mahoadon;
-                chitiethd.Insert(new ChiTietHoaDon(mahoadon,priceProduct,mathuoc,soluong));                  
+                int soluong =int.Parse(row.Cells[3].Value.ToString());
+                int mathuoc = int.Parse(row.Cells[0].Value.ToString());
+                float priceProduct = float.Parse(row.Cells[2].Value.ToString());
+                int mahoadon = hoadon.GetLastHD().Mahoadon;
+                chitiethd.Insert(new ChiTietHoaDonBan(mahoadon,priceProduct,mathuoc,soluong));                  
             }
         }
         public void ResetDgv()
@@ -42,7 +37,6 @@ namespace Presentation
             dgvhoadon.DataSource = null;
             lbPrice.Text = "0";
         }
-
         public FrmSaleProducts()
         {
             InitializeComponent();
@@ -57,22 +51,30 @@ namespace Presentation
         }
 
         private void dgvproduct_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {          
+            
+            
             int selectedRowIndex = e.RowIndex;
             if (e.RowIndex >= 0 && e.RowIndex < dgvproduct.RowCount)
             {
-                // Thực hiện các thao tác trên dòng được click ở vị trí e.RowIndex
             if (selectedRowIndex >= 0)
             {
-                // Lấy dữ liệu của hàng được chọn
                 DataGridViewRow selectedRow = dgvproduct.Rows[selectedRowIndex];
-
-                // Tạo một hàng mới và sao chép dữ liệu từ hàng được chọn
-                DataGridViewRow newRow = (DataGridViewRow)selectedRow.Clone();
-                for (int i = 0; i < selectedRow.Cells.Count; i++)
-                {
+                int soLuong = product.getAll()
+                    .Where(t => t.Mathuoc == int.Parse(selectedRow.Cells["clmathuoc"].Value.ToString()))
+                    .Select(t => t.Soluong)
+                    .FirstOrDefault();
+                    if (soLuong == 0)
+                    {
+                        MessageBox.Show("Số lượng thuốc không đủ để bán");
+                    }
+                    else
+                    {
+                    DataGridViewRow newRow = (DataGridViewRow)selectedRow.Clone();
+                    for (int i = 0; i < selectedRow.Cells.Count; i++)
+                    {
                     newRow.Cells[i].Value = selectedRow.Cells[i].Value;                         
-                }
+                    }
                     // Thêm hàng mới vào DataGridView mới
                     AddRowIfNotExist(dgvhoadon, newRow);
                     foreach (DataGridViewRow row in dgvhoadon.Rows)
@@ -87,8 +89,11 @@ namespace Presentation
                     }   
                     CheckSateBtn();
                     CaculatorPrice();
+                    }
                 }
             }           
+
+            
         }
         private bool IsRowExist(DataGridView dataGridView, DataGridViewRow newRow)
         {
@@ -124,10 +129,12 @@ namespace Presentation
         }
 
         private void dgvhoadon_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {               
                 DataGridViewRow row = dgvhoadon.Rows[e.RowIndex];
-                int currentValue = Convert.ToInt32(row.Cells["clsoluong"].Value);            
-                if (dgvhoadon.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dgvhoadon.Columns[e.ColumnIndex].Name =="btnIncrease")
+                int currentValue = Convert.ToInt32(row.Cells["clsoluong"].Value); 
+                int mathuoc = int.Parse(row.Cells["clmasp"].Value.ToString());
+                int soLuong = product.GetSoluong(mathuoc);
+                if (dgvhoadon.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dgvhoadon.Columns[e.ColumnIndex].Name == "btnIncrease")
                 {
                     currentValue++;
                 }
@@ -137,15 +144,20 @@ namespace Presentation
                     {
                         currentValue--;
                     }
-                }              
+                }
                 row.Cells["clsoluong"].Value = currentValue.ToString();
-            CaculatorPrice();   
-            if (currentValue == 0)
+                CaculatorPrice();
+                if (currentValue == 0)
                 {
                     int selectedIndex = dgvhoadon.CurrentCell.RowIndex;
                     dgvhoadon.Rows.RemoveAt(selectedIndex);
                     CheckSateBtn();
-                }             
+                }
+                if (soLuong == 0 || soLuong < currentValue)
+                {
+                    MessageBox.Show("Số lượng thuốc không đủ để bán");
+                    btnPay.Enabled = false;
+                }                         
         }
         private void btnDestroy_Click(object sender, EventArgs e)
         {

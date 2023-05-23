@@ -16,7 +16,7 @@ namespace BusinessLogicLayer
     {
         private readonly IChiTietHoaDonDAL dal = new ChiTietHoaDonDAL();     
         IProductBUL productBUL = new ProductBUL();
-        public int Insert(ChiTietHoaDon cls)
+        public int Insert(ChiTietHoaDonBan cls)
         {
             if (checkChitiet_ID(cls.Machitiet) == 0)
                 return dal.Insert(cls.Mahoadon,cls.Dongia,cls.Mathuoc,cls.Soluong);
@@ -32,19 +32,19 @@ namespace BusinessLogicLayer
                 return dal.Delete(machitiet);
             else return -1;
         }
-        public int Update(ChiTietHoaDon cls)
+        public int Update(ChiTietHoaDonBan cls)
         {
             if (checkChitiet_ID(cls.Machitiet) != 0)
                 return dal.Update(cls.Machitiet, cls.Mahoadon, cls.Dongia, cls.Mathuoc, cls.Soluong);
             else return -1;
         }
-        public IList<ChiTietHoaDon> getAll()
+        public IList<ChiTietHoaDonBan> getAll()
         {
             System.Data.DataTable table = dal.getAll();
-            IList<ChiTietHoaDon> list = new List<ChiTietHoaDon>();
+            IList<ChiTietHoaDonBan> list = new List<ChiTietHoaDonBan>();
             foreach (DataRow row in table.Rows)
             {
-                ChiTietHoaDon cls = new ChiTietHoaDon();
+                ChiTietHoaDonBan cls = new ChiTietHoaDonBan();
                 cls.Machitiet = row.Field<int>(0);
                 cls.Mahoadon = row.Field<int>(1);
                 cls.Dongia = row.Field<float>(2);              
@@ -57,15 +57,15 @@ namespace BusinessLogicLayer
 
 
 
-        public void KetXuatWord(string name,int mahd,float tongtien,string templatePath, string exportPath)
+        public void KetXuatWord(string name,int mahd,float tongtien,string tenv,string templatePath, string exportPath)
         {
             IChiTietHoaDonBUL chitiet = new ChiTietHoaDonBUL();
-            IStudentBUL std = new StudentBUL();
-            IList<ChiTietHoaDon> list = chitiet.getAll();
-            IList<ChiTietHoaDon> newList = list.Where(ct => ct.Mahoadon == mahd).ToList();
+            IList<ChiTietHoaDonBan> list = chitiet.getAll();
+            IList<ChiTietHoaDonBan> newList = list.Where(ct => ct.Mahoadon == mahd).ToList();
             Dictionary<string, string> dictionaryData = new Dictionary<string, string>();
             dictionaryData.Add("tenkhachhang", name);
             dictionaryData.Add("tongtien",tongtien.ToString());
+            dictionaryData.Add("nhanvien",tenv);
             System.IO.File.Copy(templatePath, exportPath, true);         
             ExportDocx.CreateChiTietTemplate(exportPath, dictionaryData,newList);
         }

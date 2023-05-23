@@ -52,11 +52,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtemail = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.radioYes = new System.Windows.Forms.RadioButton();
+            this.radioNo = new System.Windows.Forms.RadioButton();
+            this.label13 = new System.Windows.Forms.Label();
             this.colncc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenncc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Colemail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clhoptac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvider)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +72,7 @@
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox1.Location = new System.Drawing.Point(0, 281);
-            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(1293, 434);
             this.guna2GroupBox1.TabIndex = 0;
@@ -94,7 +98,8 @@
             this.colTenncc,
             this.colDiaChi,
             this.colDienThoai,
-            this.Colemail});
+            this.Colemail,
+            this.clhoptac});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -106,7 +111,7 @@
             this.dgvProvider.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvProvider.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvProvider.Location = new System.Drawing.Point(0, 42);
-            this.dgvProvider.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvProvider.Margin = new System.Windows.Forms.Padding(2);
             this.dgvProvider.Name = "dgvProvider";
             this.dgvProvider.ReadOnly = true;
             this.dgvProvider.RowHeadersVisible = false;
@@ -148,7 +153,7 @@
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageOffset = new System.Drawing.Point(-4, 0);
             this.btnSearch.Location = new System.Drawing.Point(811, 8);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(143, 45);
             this.btnSearch.TabIndex = 57;
@@ -178,6 +183,7 @@
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.Location = new System.Drawing.Point(474, 11);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "Nhập thông tin nhà cung cấp ...";
@@ -197,7 +203,7 @@
             this.btnReload.ImageOffset = new System.Drawing.Point(-6, 0);
             this.btnReload.ImageSize = new System.Drawing.Size(30, 30);
             this.btnReload.Location = new System.Drawing.Point(1018, 209);
-            this.btnReload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReload.Margin = new System.Windows.Forms.Padding(2);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(144, 51);
             this.btnReload.TabIndex = 55;
@@ -216,7 +222,7 @@
             this.btnRemove.ImageOffset = new System.Drawing.Point(-6, 0);
             this.btnRemove.ImageSize = new System.Drawing.Size(30, 30);
             this.btnRemove.Location = new System.Drawing.Point(851, 209);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(144, 51);
             this.btnRemove.TabIndex = 54;
@@ -235,7 +241,7 @@
             this.btnEdit.ImageOffset = new System.Drawing.Point(-6, 0);
             this.btnEdit.ImageSize = new System.Drawing.Size(30, 30);
             this.btnEdit.Location = new System.Drawing.Point(678, 209);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(144, 51);
             this.btnEdit.TabIndex = 53;
@@ -254,7 +260,7 @@
             this.btnAdd.ImageOffset = new System.Drawing.Point(-6, 0);
             this.btnAdd.ImageSize = new System.Drawing.Size(30, 30);
             this.btnAdd.Location = new System.Drawing.Point(490, 209);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(144, 51);
             this.btnAdd.TabIndex = 52;
@@ -272,7 +278,8 @@
             this.txtdienthoai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtdienthoai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdienthoai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtdienthoai.Location = new System.Drawing.Point(746, 129);
+            this.txtdienthoai.Location = new System.Drawing.Point(746, 121);
+            this.txtdienthoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtdienthoai.Name = "txtdienthoai";
             this.txtdienthoai.PasswordChar = '\0';
             this.txtdienthoai.PlaceholderText = "";
@@ -292,6 +299,7 @@
             this.txtdiachi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdiachi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtdiachi.Location = new System.Drawing.Point(746, 69);
+            this.txtdiachi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtdiachi.Name = "txtdiachi";
             this.txtdiachi.PasswordChar = '\0';
             this.txtdiachi.PlaceholderText = "";
@@ -310,7 +318,8 @@
             this.txttenncc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttenncc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttenncc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txttenncc.Location = new System.Drawing.Point(214, 129);
+            this.txttenncc.Location = new System.Drawing.Point(214, 121);
+            this.txttenncc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txttenncc.Name = "txttenncc";
             this.txttenncc.PasswordChar = '\0';
             this.txttenncc.PlaceholderText = "";
@@ -330,6 +339,7 @@
             this.txtmancc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmancc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtmancc.Location = new System.Drawing.Point(214, 69);
+            this.txtmancc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtmancc.Name = "txtmancc";
             this.txtmancc.PasswordChar = '\0';
             this.txtmancc.PlaceholderText = "";
@@ -341,7 +351,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(608, 129);
+            this.label5.Location = new System.Drawing.Point(608, 121);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 19);
@@ -403,7 +413,8 @@
             this.txtemail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtemail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtemail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtemail.Location = new System.Drawing.Point(214, 174);
+            this.txtemail.Location = new System.Drawing.Point(214, 166);
+            this.txtemail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtemail.Name = "txtemail";
             this.txtemail.PasswordChar = '\0';
             this.txtemail.PlaceholderText = "";
@@ -423,11 +434,44 @@
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageSize = new System.Drawing.Size(30, 30);
             this.btnExit.Location = new System.Drawing.Point(1105, 11);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(57, 42);
             this.btnExit.TabIndex = 60;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // radioYes
+            // 
+            this.radioYes.AutoSize = true;
+            this.radioYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioYes.Location = new System.Drawing.Point(746, 161);
+            this.radioYes.Name = "radioYes";
+            this.radioYes.Size = new System.Drawing.Size(83, 24);
+            this.radioYes.TabIndex = 93;
+            this.radioYes.Text = "Hợp tác";
+            this.radioYes.UseVisualStyleBackColor = true;
+            // 
+            // radioNo
+            // 
+            this.radioNo.AutoSize = true;
+            this.radioNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioNo.Location = new System.Drawing.Point(886, 161);
+            this.radioNo.Name = "radioNo";
+            this.radioNo.Size = new System.Drawing.Size(131, 24);
+            this.radioNo.TabIndex = 92;
+            this.radioNo.Text = "Ngừng hợp tác";
+            this.radioNo.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(608, 166);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(96, 19);
+            this.label13.TabIndex = 91;
+            this.label13.Text = "Trạng thái : ";
             // 
             // colncc
             // 
@@ -476,12 +520,22 @@
             this.Colemail.Name = "Colemail";
             this.Colemail.ReadOnly = true;
             // 
+            // clhoptac
+            // 
+            this.clhoptac.DataPropertyName = "NgungHopTac";
+            this.clhoptac.HeaderText = "Trạng thái";
+            this.clhoptac.Name = "clhoptac";
+            this.clhoptac.ReadOnly = true;
+            // 
             // FrmProvider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1293, 715);
+            this.Controls.Add(this.radioYes);
+            this.Controls.Add(this.radioNo);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtemail);
             this.Controls.Add(this.label2);
@@ -502,7 +556,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2GroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmProvider";
             this.Text = "FrmProvider";
             this.Load += new System.EventHandler(this.FrmProvider_Load);
@@ -535,10 +589,14 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtemail;
         private Guna.UI2.WinForms.Guna2Button btnExit;
+        private System.Windows.Forms.RadioButton radioYes;
+        private System.Windows.Forms.RadioButton radioNo;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridViewTextBoxColumn colncc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenncc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn Colemail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clhoptac;
     }
 }

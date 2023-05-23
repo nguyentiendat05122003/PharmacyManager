@@ -19,7 +19,7 @@ namespace BusinessLogicLayer
         public int Insert(Provider cls)
         {
             if (checkNCC_ID(cls.Mancc) == 0)         
-                return dal.Insert(cls.Tenncc,cls.Diachi,cls.Dienthoai,cls.Email);
+                return dal.Insert(cls.Tenncc,cls.Diachi,cls.Dienthoai,cls.Email,cls.Ngunghoptac);
             else return -1;
 
         }
@@ -36,7 +36,7 @@ namespace BusinessLogicLayer
         public int Update(Provider cls)
         {
             if (checkNCC_ID(cls.Mancc) != 0)
-                return dal.Update(cls.Mancc, cls.Tenncc, cls.Diachi, cls.Dienthoai, cls.Email);
+                return dal.Update(cls.Mancc, cls.Tenncc, cls.Diachi, cls.Dienthoai, cls.Email,cls.Ngunghoptac);
             else return -1;
         }
 
@@ -52,13 +52,32 @@ namespace BusinessLogicLayer
                 cls.Diachi = row.Field<string>(2);
                 cls.Dienthoai = row.Field<string>(3);
                 cls.Email = row.Field<string>(4);
+                cls.Ngunghoptac = row.Field<bool>(5);
                 list.Add(cls);
             }
             return list;
         }
-        public IList<Provider> SearchLinq(Provider cls)
+        public IList<Provider> SearchLinq(string value)
         {
-            return getAll().Where(x => (string.IsNullOrEmpty(cls.Mancc.ToString()) || x.Mancc.ToString().Contains(cls.Mancc.ToString()))).ToList();
+            return getAll().Where(x => (string.IsNullOrEmpty(value) || x.Mancc.ToString().Contains(value) ||
+               (x.Tenncc.ToString() == value) ||
+               (string.IsNullOrEmpty(value) || x.Tenncc.ToLower().Contains(value)))).ToList();
+        }
+
+        public IList<Provider> GetProviderIsContact()
+        {
+            var items = getAll()
+            .Where(row => row.Ngunghoptac == true)
+            .ToList();
+            return items;
+        }
+        public string GetProviderName(int mancc)
+        {
+            string tenNhaCungCap = getAll()
+            .Where(ncc => ncc.Mancc == mancc)
+            .Select(ncc => ncc.Tenncc)
+            .FirstOrDefault();
+            return tenNhaCungCap;
         }
     }
 }

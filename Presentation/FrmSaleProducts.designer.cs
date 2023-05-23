@@ -32,12 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSaleProducts));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSaleProducts));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbPrice = new System.Windows.Forms.Label();
@@ -45,6 +45,7 @@
             this.btnDestroy = new Guna.UI2.WinForms.Guna2Button();
             this.btnPay = new Guna.UI2.WinForms.Guna2Button();
             this.dgvhoadon = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.clmasp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cldongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clsoluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,15 +54,17 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnReload = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvproduct = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.clmathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clsolg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnReload = new Guna.UI2.WinForms.Guna2Button();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvhoadon)).BeginInit();
@@ -77,9 +80,9 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(970, 893);
+            this.panel1.Size = new System.Drawing.Size(970, 715);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -92,9 +95,9 @@
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1191, 893);
+            this.panel3.Size = new System.Drawing.Size(1191, 715);
             this.panel3.TabIndex = 1;
             // 
             // lbPrice
@@ -104,7 +107,7 @@
             this.lbPrice.Location = new System.Drawing.Point(107, 601);
             this.lbPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(27, 29);
+            this.lbPrice.Size = new System.Drawing.Size(19, 20);
             this.lbPrice.TabIndex = 13;
             this.lbPrice.Text = "0";
             // 
@@ -115,7 +118,7 @@
             this.lbPriceText.Location = new System.Drawing.Point(40, 601);
             this.lbPriceText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPriceText.Name = "lbPriceText";
-            this.lbPriceText.Size = new System.Drawing.Size(95, 29);
+            this.lbPriceText.Size = new System.Drawing.Size(64, 20);
             this.lbPriceText.TabIndex = 12;
             this.lbPriceText.Text = "Tổng : ";
             // 
@@ -167,6 +170,7 @@
             this.dgvhoadon.ColumnHeadersHeight = 50;
             this.dgvhoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvhoadon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmasp,
             this.clten,
             this.cldongia,
             this.clsoluong,
@@ -194,7 +198,7 @@
             this.dgvhoadon.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvhoadon.RowHeadersVisible = false;
             this.dgvhoadon.RowHeadersWidth = 62;
-            this.dgvhoadon.Size = new System.Drawing.Size(591, 543);
+            this.dgvhoadon.Size = new System.Drawing.Size(591, 378);
             this.dgvhoadon.TabIndex = 8;
             this.dgvhoadon.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvhoadon.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -219,10 +223,16 @@
             this.dgvhoadon.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvhoadon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvhoadon_CellContentClick);
             // 
+            // clmasp
+            // 
+            this.clmasp.HeaderText = "Mã thuốc";
+            this.clmasp.Name = "clmasp";
+            this.clmasp.ReadOnly = true;
+            // 
             // clten
             // 
             this.clten.FillWeight = 89.48863F;
-            this.clten.HeaderText = "Tên sản phẩm";
+            this.clten.HeaderText = "Tên thuốc";
             this.clten.MinimumWidth = 8;
             this.clten.Name = "clten";
             this.clten.ReadOnly = true;
@@ -269,7 +279,7 @@
             this.panel5.Controls.Add(this.label4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1191, 50);
             this.panel5.TabIndex = 7;
@@ -282,7 +292,7 @@
             this.label4.Location = new System.Drawing.Point(200, 8);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(372, 37);
+            this.label4.Size = new System.Drawing.Size(246, 25);
             this.label4.TabIndex = 2;
             this.label4.Text = "THÔNG TIN HÓA ĐƠN";
             // 
@@ -295,20 +305,38 @@
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(599, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(588, 893);
+            this.panel2.Size = new System.Drawing.Size(588, 715);
             this.panel2.TabIndex = 1;
+            // 
+            // btnReload
+            // 
+            this.btnReload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReload.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btnReload.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReload.ForeColor = System.Drawing.Color.White;
+            this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
+            this.btnReload.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnReload.Location = new System.Drawing.Point(502, 55);
+            this.btnReload.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(75, 56);
+            this.btnReload.TabIndex = 48;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.Controls.Add(this.dgvproduct);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(8, 169);
-            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(26, 118);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(496, 695);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(551, 695);
             this.guna2GroupBox1.TabIndex = 40;
             this.guna2GroupBox1.Text = "Thông tin sản phẩm";
             // 
@@ -329,8 +357,10 @@
             this.dgvproduct.ColumnHeadersHeight = 50;
             this.dgvproduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvproduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmathuoc,
             this.colName,
-            this.colPrice});
+            this.colPrice,
+            this.clsolg});
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -342,7 +372,7 @@
             this.dgvproduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvproduct.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvproduct.Location = new System.Drawing.Point(0, 40);
-            this.dgvproduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvproduct.Margin = new System.Windows.Forms.Padding(2);
             this.dgvproduct.Name = "dgvproduct";
             this.dgvproduct.ReadOnly = true;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -358,7 +388,7 @@
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
             this.dgvproduct.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvproduct.RowTemplate.Height = 28;
-            this.dgvproduct.Size = new System.Drawing.Size(496, 655);
+            this.dgvproduct.Size = new System.Drawing.Size(551, 655);
             this.dgvproduct.TabIndex = 0;
             this.dgvproduct.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvproduct.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -383,6 +413,36 @@
             this.dgvproduct.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvproduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvproduct_CellClick);
             // 
+            // clmathuoc
+            // 
+            this.clmathuoc.DataPropertyName = "MaThuoc";
+            this.clmathuoc.HeaderText = "Mã thuốc";
+            this.clmathuoc.Name = "clmathuoc";
+            this.clmathuoc.ReadOnly = true;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "TenThuoc";
+            this.colName.HeaderText = "Tên thuốc";
+            this.colName.MinimumWidth = 8;
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colPrice
+            // 
+            this.colPrice.DataPropertyName = "GiaBan";
+            this.colPrice.HeaderText = "Giá bán";
+            this.colPrice.MinimumWidth = 8;
+            this.colPrice.Name = "colPrice";
+            this.colPrice.ReadOnly = true;
+            // 
+            // clsolg
+            // 
+            this.clsolg.DataPropertyName = "Soluong";
+            this.clsolg.HeaderText = "Số lượng";
+            this.clsolg.Name = "clsolg";
+            this.clsolg.ReadOnly = true;
+            // 
             // btnSearch
             // 
             this.btnSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -396,7 +456,7 @@
             this.btnSearch.ImageOffset = new System.Drawing.Point(-2, 0);
             this.btnSearch.ImageSize = new System.Drawing.Size(30, 30);
             this.btnSearch.Location = new System.Drawing.Point(323, 69);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(173, 37);
             this.btnSearch.TabIndex = 39;
@@ -441,54 +501,20 @@
             this.label8.Location = new System.Drawing.Point(213, 9);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 37);
+            this.label8.Size = new System.Drawing.Size(97, 25);
             this.label8.TabIndex = 2;
             this.label8.Text = "BỘ LỌC";
-            // 
-            // btnReload
-            // 
-            this.btnReload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReload.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.btnReload.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
-            this.btnReload.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnReload.Location = new System.Drawing.Point(502, 54);
-            this.btnReload.Margin = new System.Windows.Forms.Padding(2);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(75, 57);
-            this.btnReload.TabIndex = 48;
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
-            // 
-            // colName
-            // 
-            this.colName.DataPropertyName = "TenThuoc";
-            this.colName.HeaderText = "Tên thuốc";
-            this.colName.MinimumWidth = 8;
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colPrice
-            // 
-            this.colPrice.DataPropertyName = "GiaBan";
-            this.colPrice.HeaderText = "Giá bán";
-            this.colPrice.MinimumWidth = 8;
-            this.colPrice.Name = "colPrice";
-            this.colPrice.ReadOnly = true;
             // 
             // FrmSaleProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1187, 893);
+            this.ClientSize = new System.Drawing.Size(1187, 715);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmSaleProducts";
             this.Text = "FrmSaleProducts";
             this.Load += new System.EventHandler(this.FrmSaleProducts_Load);
@@ -523,15 +549,18 @@
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvproduct;
         private Guna.UI2.WinForms.Guna2DataGridView dgvhoadon;
+        private System.Windows.Forms.Label lbPrice;
+        private System.Windows.Forms.Label lbPriceText;
+        private Guna.UI2.WinForms.Guna2Button btnReload;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmasp;
         private System.Windows.Forms.DataGridViewTextBoxColumn clten;
         private System.Windows.Forms.DataGridViewTextBoxColumn cldongia;
         private System.Windows.Forms.DataGridViewTextBoxColumn clsoluong;
         private System.Windows.Forms.DataGridViewButtonColumn btnIncrease;
         private System.Windows.Forms.DataGridViewButtonColumn btnDecrement;
-        private System.Windows.Forms.Label lbPrice;
-        private System.Windows.Forms.Label lbPriceText;
-        private Guna.UI2.WinForms.Guna2Button btnReload;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmathuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clsolg;
     }
 }

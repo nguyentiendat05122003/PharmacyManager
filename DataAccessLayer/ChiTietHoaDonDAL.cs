@@ -30,7 +30,7 @@ namespace DataAccessLayer
             parm[1].Value = dongia;
             parm[2].Value = mathuoc;
             parm[3].Value = soluong;
-            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_ChiTietHoaDon_Ins", parm);
+            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_ChiTietHoaDonBan_Ins", parm);
         }
 
         public int Delete(int machitietID)
@@ -40,7 +40,7 @@ namespace DataAccessLayer
                 new SqlParameter(PARM_MACHITIET,SqlDbType.Int)
             };
             parm[0].Value = machitietID;
-            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_ChiTietHoaDon_Del", parm);
+            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_ChiTietHoaDonBan_Del", parm);
         }
         public int Update(int machitiet, int mahoadon, float dongia, int mathuoc, int soluong)
         {
@@ -57,11 +57,11 @@ namespace DataAccessLayer
             parm[2].Value = dongia;
             parm[3].Value = mathuoc;
             parm[4].Value = soluong;
-            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_ChitietHoaDon_Upd", parm);
+            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_ChiTietHoaDonBan_Update", parm);
         }
         public DataTable getAll()
         {
-            SqlDataReader dra = SqlHelper.ExecuteReader(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_ChiTietHoaDon_Sel_All", null);
+            SqlDataReader dra = SqlHelper.ExecuteReader(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_ChiTietHoaDonBan_Sel_All", null);
             DataTable table = new DataTable();
             table.Columns.Add("MaChiTiet", typeof(int));
             table.Columns.Add("MaHoaDon", typeof(int));
@@ -82,7 +82,7 @@ namespace DataAccessLayer
                 new SqlParameter(PARM_MACHITIET,SqlDbType.Int)
             };
             parm[0].Value = machitiet;
-            return (int)SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_ChiTietHoaDon_Check", parm);
+            return (int)SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_ChiTietHoaDonBan_Check", parm);
         }
     }
 }

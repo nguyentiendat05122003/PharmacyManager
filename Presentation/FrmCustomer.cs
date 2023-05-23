@@ -41,7 +41,7 @@ namespace Presentation
             txthoten.Text = "";
             txtsdt.Text = "";
             txtdiachi.Text = "";
-           
+            txtemail.Text = "";       
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace Presentation
             {
                 try
                 {
-                    int val = kh.Insert(new KhachHang(txthoten.Text, txtdiachi.Text, txtsdt.Text,txtemail.Text));
+                    int val = kh.Insert(new KhachHang(txthoten.Text, txtdiachi.Text, txtsdt.Text,txtemail.Text,rdbYes.Checked));
                     LoadData();
                     if (val == -1)
                         MessageBox.Show("Thêm dữ liệu không thành công, hãy kiểm tra lại!", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -77,6 +77,7 @@ namespace Presentation
             cl.Diachi = txtdiachi.Text;
             cl.Dienthoai = txtsdt.Text;
             cl.Email = txtemail.Text;
+            cl.Daxoa = rdbYes.Checked;
             try
             {
                 int val = kh.Update(cl);
@@ -120,8 +121,17 @@ namespace Presentation
             txtmakh.Text = dgvkhachhang[0, dgvkhachhang.CurrentCell.RowIndex].Value.ToString();
             txthoten.Text = dgvkhachhang[1, dgvkhachhang.CurrentCell.RowIndex].Value.ToString();
             txtdiachi.Text = dgvkhachhang[2, dgvkhachhang.CurrentCell.RowIndex].Value.ToString();
-            txtdiachi.Text = dgvkhachhang[3, dgvkhachhang.CurrentCell.RowIndex].Value.ToString();
+            txtsdt.Text = dgvkhachhang[3, dgvkhachhang.CurrentCell.RowIndex].Value.ToString();
             txtemail.Text = dgvkhachhang[4, dgvkhachhang.CurrentCell.RowIndex].Value.ToString();
+            string state = dgvkhachhang[5, dgvkhachhang.CurrentCell.RowIndex].Value.ToString();
+            if (state == "True")
+            {
+                rdbYes.Checked = true;
+            }
+            else if (state == "False")
+            {
+                rdbNo.Checked = true;
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

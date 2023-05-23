@@ -12,31 +12,33 @@ namespace Entities
         protected string tenthuoc;
         protected float giaban;
         protected DateTime hansudung;
-        protected int mancc;
         protected int madonvitinh;
-
+        protected bool dungkinhdoanh;
+        protected int soluong;
         public Product()
         {
 
         }
 
-        public Product(int mathuoc, string tenthuoc, float giaban, DateTime hansudung, int mancc, int madonvitinh)
+        public Product(int mathuoc, string tenthuoc, float giaban, DateTime hansudung, bool dungkinhdoanh, int madonvitinh, int soluong)
         {
             this.mathuoc = mathuoc;
             this.tenthuoc = tenthuoc;
             this.giaban = giaban;
             this.hansudung = hansudung;
-            this.mancc = mancc;
             this.madonvitinh = madonvitinh;
+            this.dungkinhdoanh = dungkinhdoanh;
+            this.soluong = soluong;
         }
 
-        public Product(string tenthuoc, float giaban, DateTime hansudung, int mancc, int madonvitinh)
+        public Product(string tenthuoc, float giaban, DateTime hansudung, bool dungkinhdoanh, int madonvitinh,int soluong)
         {
             this.tenthuoc = tenthuoc;
             this.giaban = giaban;
             this.hansudung = hansudung;
-            this.mancc = mancc;
             this.madonvitinh = madonvitinh;
+            this.dungkinhdoanh = dungkinhdoanh;
+            this.soluong = soluong;
         }
         public int Mathuoc
         {
@@ -60,19 +62,14 @@ namespace Entities
             {
                 hansudung = value;
             }
-        }
-        public int Mancc {
-            get { return mancc; }
-            set
-            {
-                mancc = value;
-            }
-        }
+        }     
         public int Madonvitinh
         {
             get { return madonvitinh;}
             set { madonvitinh = value; }
         }
 
+        public bool Dungkinhdoanh { get => dungkinhdoanh; set => dungkinhdoanh = value; }
+        public int Soluong { get => soluong; set => soluong = value; }
     }
 }

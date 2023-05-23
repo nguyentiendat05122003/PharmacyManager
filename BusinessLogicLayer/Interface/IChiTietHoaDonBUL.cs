@@ -10,12 +10,12 @@ namespace BusinessLogicLayer.Interface
 {
     public interface IChiTietHoaDonBUL
     {
-        int Insert(ChiTietHoaDon cls);
+        int Insert(ChiTietHoaDonBan cls);
         int Delete(int machitiet);
-        int Update(ChiTietHoaDon cls);
-        IList<ChiTietHoaDon> getAll();
+        int Update(ChiTietHoaDonBan cls);
+        IList<ChiTietHoaDonBan> getAll();
         int checkChitiet_ID(int machitiet);
 
-        void KetXuatWord(string name,int mahd, float tongtien,string templatePath, string exportPath);
+        void KetXuatWord(string name,int mahd, float tongtien,string tenv,string templatePath, string exportPath);
     }
 }

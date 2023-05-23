@@ -41,25 +41,22 @@ namespace Presentation
                 if (isAccountExist)
                 {
                     int manvLogin = tk.TaiKhoanLogin(txtUserName.Text, txtPassword.Text).Manhanvien;
-                    Bien.manhanvien = manvLogin;
                     NhanVien nvLogin = tk.GetNhanVien(manvLogin);
+                    Bien.manhanvien = manvLogin;
                     Bien.username = nvLogin.Hoten;
                     if(nvLogin.VaiTro == 1)
                     {
                         Bien.chucvu = "Quản lý";
-                        FrmMain frm = new FrmMain();
-                        Bien.loainv = 1;
-                        frm.Show();
-                        this.Hide();
+                        Bien.loainv = 1;                      
                     }
                     else
                     {
-                        Bien.loainv = 1;
-                        Bien.chucvu = "Nhân viên";
-                        FrmMain frm = new FrmMain();
-                        frm.Show();
-                        this.Hide();
+                        Bien.loainv = 2;
+                        Bien.chucvu = "Nhân viên";                     
                     }
+                    FrmMain frm = new FrmMain();
+                    frm.Show();
+                    this.Hide();
                 }
                 else
                 {

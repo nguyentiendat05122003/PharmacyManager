@@ -14,5 +14,7 @@ namespace BusinessLogicLayer.Interface
         int Update(PhieuNhap cls);
         IList<PhieuNhap> getAll();
         int checkPhieuNhap_ID(int phieunhapID);
+        PhieuNhap GetLastPN();
+        void KetXuatWord(string ncc, string templatePath, string exportPath);
     }
 }

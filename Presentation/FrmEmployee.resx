@@ -2340,10 +2340,13 @@
   <metadata name="clEmail.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="cldathoiviec.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="guna2Button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAA0dZJREFUeF7s3Qe4ZVWZ53/nPz3T3dO0odvUioggCCKY29BmxYhZVCTnnAURFRDJ
+        DAAACwwBP0AiyAAA0dZJREFUeF7s3Qe4ZVWZ53/nPz3T3dO0odvUioggCCKY29BmxYhZVCTnnAURFRDJ
         uQoQ0LYVJVQgFrGKylRBEQRFggKSRJQcCqoI6v7v91atqnXX/e693rP2u/Y5B/d6ns+jA/eeW87Mud/f
         OlWn7gu6053udGeQzgf3n/VPHzxo2rs/9P3L9vjYgVMnfPzgaTeue9CMC5b+6+50pzvd6U53ujPs513f
         Pv8VHzno4s9++MCpB5exv+STh0y/69OHXvbXzxw2vfB9/KDLZiz9lO50pzvd6U53ujMsZ/39b/y/cqv/

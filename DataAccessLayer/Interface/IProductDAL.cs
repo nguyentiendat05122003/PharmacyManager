@@ -10,14 +10,10 @@ namespace DataAccessLayer.Interface
 {
     public interface IProductDAL
     {
-        int Insert(string tenthuoc, float giaban, DateTime hansudung, int mancc, int madonvitinh);
-        int Insert(Product pro);
-
+        int Insert(string tenthuoc, float giaban, DateTime hansudung, bool dungkinhdoanh, int madonvitinh,int soluong);
         int Delete(int mathuoc);
-        int Update(int mathuoc, string tenthuoc, float giaban, DateTime hansudung, int mancc, int madonvitinh);
+        int Update(int mathuoc, string tenthuoc, float giaban, DateTime hansudung, bool dungkinhdoanh, int madonvitinh,int soluong);
         DataTable getAll();
         int checkProduct_ID(int mathuoc);
-
-
     }
 }

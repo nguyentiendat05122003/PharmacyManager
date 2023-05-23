@@ -10,10 +10,9 @@ namespace DataAccessLayer.Interface
 {
     public interface INhanVienDAL
     {
-        int Insert(int vaitro, string hoten, bool gioitinh, DateTime ngaysinh, string diachi, string dienthoai, string email);
-        int Insert(NhanVien nv);
+        int Insert(int vaitro, string hoten, bool gioitinh, DateTime ngaysinh, string diachi, string dienthoai, string email,bool dathoiviec);
         int Delete(int NhanVienID);
-        int Update(int nhanvienID, int vaitro, string hoten, bool gioitinh, DateTime ngaysinh, string diachi, string dienthoai, string email);
+        int Update(int nhanvienID, int vaitro, string hoten, bool gioitinh, DateTime ngaysinh, string diachi, string dienthoai, string email, bool dathoiviec);
         DataTable getAll();
         int checkNhanVien_ID(int MaNhanVien);
     }

@@ -1,6 +1,8 @@
 ﻿using BusinessLogicLayer.Interface;
 using DataAccessLayer;
 using DataAccessLayer.Interface;
+using DocumentFormat.OpenXml.VariantTypes;
+using DocumentFormat.OpenXml.Wordprocessing;
 using Entities;
 using System;
 using System.Collections.Generic;
@@ -19,7 +21,7 @@ namespace BusinessLogicLayer
         public int Insert(PhieuNhap cls)
         {
             if (checkPhieuNhap_ID(cls.Maphieunhap) == 0)
-                return dal.Insert(cls.Mathuoc,cls.Ngaynhap, cls.Tongtien, cls.Manhanvien);
+                return dal.Insert(cls.Mancc,cls.Ngaynhap, cls.Tongtien, cls.Manhanvien);
             else return -1;
         }
 
@@ -33,7 +35,7 @@ namespace BusinessLogicLayer
         public int Update(PhieuNhap cls)
         {
             if (checkPhieuNhap_ID(cls.Maphieunhap) != 0)
-                return dal.Update(cls.Maphieunhap,cls.Mathuoc, cls.Ngaynhap, cls.Tongtien, cls.Manhanvien);
+                return dal.Update(cls.Maphieunhap,cls.Mancc, cls.Ngaynhap, cls.Tongtien, cls.Manhanvien);
             else return -1;
         }
 
@@ -45,10 +47,10 @@ namespace BusinessLogicLayer
             {
                 PhieuNhap cls = new PhieuNhap();
                 cls.Maphieunhap = row.Field<int>(0);
-                cls.Mathuoc = row.Field<int>(1);
+                cls.Mancc = row.Field<int>(1);
                 cls.Ngaynhap = row.Field<DateTime>(2);
-                cls.Tongtien = row.Field<float>(2);
-                cls.Manhanvien = row.Field<int>(3);
+                cls.Tongtien = row.Field<float>(3);
+                cls.Manhanvien = row.Field<int>(4);
                 list.Add(cls);
             }
             return list;
@@ -62,6 +64,16 @@ namespace BusinessLogicLayer
         public IList<PhieuNhap> SearchLinq(PhieuNhap cls)
         {
             return getAll();
+        }
+        public PhieuNhap GetLastPN()
+        {
+            PhieuNhap phieuNhapCuoiCung = getAll().OrderByDescending(p => p.Maphieunhap).FirstOrDefault();          
+            return phieuNhapCuoiCung;
+        }
+
+        public void KetXuatWord(string ncc, string templatePath, string exportPath)
+        {
+            
         }
     }
 }

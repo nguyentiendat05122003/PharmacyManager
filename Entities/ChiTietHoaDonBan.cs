@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class ChiTietHoaDon
+    public class ChiTietHoaDonBan
     {
         private int machitiet;
         private int mahoadon;
@@ -20,12 +20,12 @@ namespace Entities
         public int Mathuoc { get => mathuoc; set => mathuoc = value; }
         public int Soluong { get => soluong; set => soluong = value; }
 
-        public ChiTietHoaDon()
+        public ChiTietHoaDonBan()
         {
 
         }
 
-        public ChiTietHoaDon(ChiTietHoaDon cls)
+        public ChiTietHoaDonBan(ChiTietHoaDonBan cls)
         {
             this.Machitiet = cls.Machitiet;
             this.Mahoadon = cls.Mahoadon;
@@ -33,7 +33,7 @@ namespace Entities
             this.Mathuoc = cls.Mathuoc;
             this.Soluong= cls.Soluong;
         }
-        public ChiTietHoaDon(int machitiet, int mahoadon, float dongia, int mathuoc, int soluong)
+        public ChiTietHoaDonBan(int machitiet, int mahoadon, float dongia, int mathuoc, int soluong)
         {
             this.Machitiet = machitiet;
             this.Mahoadon = mahoadon;
@@ -41,7 +41,7 @@ namespace Entities
             this.Mathuoc = mathuoc;
             this.Soluong = soluong;
         }
-        public ChiTietHoaDon(int mahoadon, float dongia, int mathuoc, int soluong)
+        public ChiTietHoaDonBan(int mahoadon, float dongia, int mathuoc, int soluong)
         {
             this.Mahoadon = mahoadon;
             this.Dongia = dongia;

@@ -95,7 +95,7 @@ namespace BusinessLogicLayer
             return res;
         }
 
-        public static string CreateChiTietTemplate(string filename, Dictionary<string, string> dictionaryData, IList<ChiTietHoaDon> data)
+        public static string CreateChiTietTemplate(string filename, Dictionary<string, string> dictionaryData, IList<ChiTietHoaDonBan> data)
         {
             string res = "";
             IProductBUL product = new ProductBUL();
@@ -155,13 +155,54 @@ namespace BusinessLogicLayer
                         {
                             for (int i = 0; i < data.Count; i++)
                             {
-                                string tenthuoc =  provider.getAll().FirstOrDefault(t => t.Mancc == data[i].Mancc)?.Tenncc;
+                                //string tenthuoc =  provider.getAll().FirstOrDefault(t => t.Mancc == data[i].Mancc)?.Tenncc;
                                 Novacode.Row newRow = myTable.InsertRow(myTable.Rows[cRow], cRow + i + 1);
                                 newRow.Cells[0].Paragraphs.First().Append((i + 1).ToString()).ReplaceText(fTempTableData, "");
                                 newRow.Cells[1].Paragraphs.First().Append(data[i].Tenthuoc);
                                 newRow.Cells[2].Paragraphs.First().Append(data[i].Giaban.ToString());
                                 newRow.Cells[3].Paragraphs.First().Append(data[i].Hansudung.ToString("dd/MM/yyyy"));
-                                newRow.Cells[4].Paragraphs.First().Append(tenthuoc);
+                                //newRow.Cells[4].Paragraphs.First().Append(tenthuoc);
+                            }
+                            cRow += 1;
+                        }
+                        myTable.RemoveRow(1);
+                    }
+                    document.ReplaceText(fTempTableData, "");
+                    document.Save();
+                    document.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                res = ex.Message;
+            }
+            return res;
+        }
+
+        public static string CreatePhieuNhapTemplate(string filename, Dictionary<string, string> dictionaryData, IList<ChiTietPhieuNhap> data)
+        {
+            string res = "";
+            IProductBUL product = new ProductBUL();
+            try
+            {
+                using (DocX document = DocX.Load(filename))
+                {
+                    ReplaceTime(document, null);
+                    ReplaceData(dictionaryData, null, document);
+                    int cRow = 1;
+                    if (data != null && data.Count > 0)
+                    {
+                        Novacode.Table myTable = FindTableWithText(document.Tables, fTempTableData, out int Row, out int cCell);
+                        if (data.Count > 0)
+                        {
+                            for (int i = 0; i < data.Count; i++)
+                            {
+                                string tenThuoc = product.getAll().FirstOrDefault(thuoc => thuoc.Mathuoc == data[i].Mathuoc)?.Tenthuoc;
+                                Novacode.Row newRow = myTable.InsertRow(myTable.Rows[cRow], cRow + i + 1);
+                                newRow.Cells[0].Paragraphs.First().Append((i + 1).ToString()).ReplaceText(fTempTableData, "");
+                                newRow.Cells[1].Paragraphs.First().Append(tenThuoc);
+                                newRow.Cells[2].Paragraphs.First().Append(data[i].Soluong.ToString() + "   X");
+                                newRow.Cells[3].Paragraphs.First().Append(data[i].Dongia.ToString());
                             }
                             cRow += 1;
                         }

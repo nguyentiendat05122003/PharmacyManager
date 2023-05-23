@@ -7,16 +7,18 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.Interface
 {
-    public interface IHoaDonBUL
+    public interface IHoaDonBanBUL
     {
-        int Insert(HoaDon hd);
+        int Insert(HoaDonBan hd);
         int Delete(int hdid);
-        int Update(HoaDon cls);
-        IList<HoaDon> getAll();
-        IList<HoaDon> SearchLinq(HoaDon cls);
+        int Update(HoaDonBan cls);
+        IList<HoaDonBan> getAll();
+        IList<HoaDonBan> SearchLinq(HoaDonBan cls);
 
         int checkHoaDon_ID(int classID);
 
         float GetDoanhThu(int month,int year);
+
+        HoaDonBan GetLastHD();
     }
 }

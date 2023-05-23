@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class HoaDon
+    public class HoaDonBan
     {
         private int mahoadon;
         private DateTime ngaylap;
@@ -18,11 +18,11 @@ namespace Entities
         public float Tongtien { get => tongtien; set => tongtien = value; }
         public int Makhachhang { get => makhachhang; set => makhachhang = value; }
         public int Manhanvien { get => manhanvien; set => manhanvien = value; }
-        public HoaDon()
+        public HoaDonBan()
         {
 
         }
-        public HoaDon(HoaDon cls)
+        public HoaDonBan(HoaDonBan cls)
         {
             this.mahoadon = cls.mahoadon;
             this.ngaylap = cls.ngaylap;
@@ -30,7 +30,7 @@ namespace Entities
             this.makhachhang = cls.makhachhang;
             this.mahoadon = cls.mahoadon;
         }
-        public HoaDon(int mahoadon, DateTime ngaylap, float tongtien, int makhachhang, int manhanvien)
+        public HoaDonBan(int mahoadon, DateTime ngaylap, float tongtien, int makhachhang, int manhanvien)
         {
             this.mahoadon = mahoadon;
             this.ngaylap = ngaylap;
@@ -39,7 +39,7 @@ namespace Entities
             this.manhanvien = manhanvien;
         }
 
-        public HoaDon(DateTime ngaylap, float tongtien, int makhachhang, int manhanvien)
+        public HoaDonBan(DateTime ngaylap, float tongtien, int makhachhang, int manhanvien)
         {
             this.ngaylap = ngaylap;
             this.tongtien = tongtien;

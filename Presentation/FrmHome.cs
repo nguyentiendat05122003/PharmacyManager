@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls.WebParts;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-//using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Presentation
 {
@@ -20,30 +19,39 @@ namespace Presentation
         IProductBUL product = new ProductBUL();
         IKhachHangBUL kh = new KhachHangBUL();
         INhanVienBUL nv = new NhanVienBUL();
-        IHoaDonBUL hoadon = new HoaDonBUL();
+        IHoaDonBanBUL hoadon = new HoaDonBanBUL();
         private float currentDoanhThu;
+        private Timer timer;
         public FrmHome()
         {
             InitializeComponent();
+            timer = new Timer();
+            timer.Interval = 100;
+            timer.Tick += Timer_Tick;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
-       
-        private void FrmHome_Load(object sender, EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
+            timer.Stop();
             PaintChart();
             GetDataForm();
         }
+
+        private void FrmHome_Load(object sender, EventArgs e)
+        {
+            timer.Start();         
+        }
         private float GetDataForMonth(int month, int year)
         {
-            if(month == DateTime.Now.Month)
+            float tonghoadon = hoadon.GetDoanhThu(month, year);
+            if (month == DateTime.Now.Month)
             {
-                currentDoanhThu = hoadon.GetDoanhThu(month, year) /  1000000f;
+                currentDoanhThu = hoadon.GetDoanhThu(month, year) / 1000000f;
             }
-            float tonghoadon =  hoadon.GetDoanhThu(month, year);
             float result = tonghoadon / 1000000f;
             return result;
         }      
@@ -62,23 +70,22 @@ namespace Presentation
             lbCustormer.Text = kh.getAll().Count.ToString();
             lbDoanhThu.Text = currentDoanhThu.ToString() + " (triệu)";
         }
-
         private void PaintChart()
         {
             int currentYear = DateTime.Now.Year;
             chartRevenue.Series.Clear();
-            chartRevenue.Series.Add("RevenueData");
-            chartRevenue.Series["RevenueData"].ChartType = SeriesChartType.Column;
+            Series revenueSeries = chartRevenue.Series.Add("RevenueData");
+            revenueSeries.ChartType = SeriesChartType.Column;
             chartRevenue.ChartAreas[0].AxisX.Interval = 1;
+
             for (int month = 1; month <= 12; month++)
             {
-                // Giả sử bạn có dữ liệu cho từng tháng lưu trong một mảng hoặc danh sách
                 float monthData = GetDataForMonth(month, currentYear);
-                // Thêm điểm dữ liệu cho từng tháng
-                chartRevenue.Series["RevenueData"].Points.AddXY(month.ToString(), monthData);
+                revenueSeries.Points.AddXY(month.ToString(), monthData);
             }
+
             chartRevenue.ChartAreas[0].AxisX.Title = "Tháng";
-            chartRevenue.Series["RevenueData"].LegendText = "Doanh Thu (triệu)";
+            revenueSeries.LegendText = "Doanh Thu (triệu)";
         }
     }
 }

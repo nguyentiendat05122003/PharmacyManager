@@ -9,9 +9,9 @@ namespace DataAccessLayer.Interface
 {
     public interface IKhachHangDAL
     {
-        int Insert(string hoten, string diachi, string dienthoai, string email);
+        int Insert(string hoten, string diachi, string dienthoai, string email,bool daxoa);
         int Delete(int makh);
-        int Update(int makh, string hoten, string diachi, string dienthoai, string email);
+        int Update(int makh, string hoten, string diachi, string dienthoai, string email, bool daxoa);
         DataTable getAll();
         int checkKh_ID(int makh);
     }

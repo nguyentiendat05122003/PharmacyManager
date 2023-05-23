@@ -66,10 +66,6 @@
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvnhanvien = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.cbbvaitro = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.radioMale = new System.Windows.Forms.RadioButton();
-            this.radioFeMale = new System.Windows.Forms.RadioButton();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.clmanv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clvaitro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clHoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,8 +74,18 @@
             this.clDiachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cldt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cldathoiviec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbbvaitro = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.radioMale = new System.Windows.Forms.RadioButton();
+            this.radioFeMale = new System.Windows.Forms.RadioButton();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.radioYes = new System.Windows.Forms.RadioButton();
+            this.radioNo = new System.Windows.Forms.RadioButton();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.guna2GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvnhanvien)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Button5
@@ -314,12 +320,13 @@
             this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
             this.btnReload.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnReload.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnReload.Location = new System.Drawing.Point(780, 260);
+            this.btnReload.Location = new System.Drawing.Point(786, 273);
             this.btnReload.Margin = new System.Windows.Forms.Padding(2);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(152, 57);
             this.btnReload.TabIndex = 73;
             this.btnReload.Text = "Tải lại";
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // btnRemove
             // 
@@ -333,7 +340,7 @@
             this.btnRemove.Image = ((System.Drawing.Image)(resources.GetObject("btnRemove.Image")));
             this.btnRemove.ImageOffset = new System.Drawing.Point(-8, 0);
             this.btnRemove.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnRemove.Location = new System.Drawing.Point(567, 260);
+            this.btnRemove.Location = new System.Drawing.Point(569, 273);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(152, 57);
@@ -353,7 +360,7 @@
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageOffset = new System.Drawing.Point(-8, 0);
             this.btnEdit.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnEdit.Location = new System.Drawing.Point(369, 260);
+            this.btnEdit.Location = new System.Drawing.Point(365, 273);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(152, 57);
@@ -373,7 +380,7 @@
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnAdd.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAdd.Location = new System.Drawing.Point(158, 260);
+            this.btnAdd.Location = new System.Drawing.Point(141, 273);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(152, 57);
@@ -551,7 +558,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(13, 195);
+            this.label11.Location = new System.Drawing.Point(13, 206);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(84, 19);
@@ -636,7 +643,8 @@
             this.clGioitinh,
             this.clDiachi,
             this.cldt,
-            this.clEmail});
+            this.clEmail,
+            this.cldathoiviec});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -679,63 +687,6 @@
             this.dgvnhanvien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvnhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvnhanvien_CellClick);
             this.dgvnhanvien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvnhanvien_CellFormatting);
-            // 
-            // cbbvaitro
-            // 
-            this.cbbvaitro.BackColor = System.Drawing.Color.Transparent;
-            this.cbbvaitro.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbvaitro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbvaitro.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbvaitro.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbbvaitro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbvaitro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbbvaitro.ItemHeight = 30;
-            this.cbbvaitro.Location = new System.Drawing.Point(141, 108);
-            this.cbbvaitro.Margin = new System.Windows.Forms.Padding(2);
-            this.cbbvaitro.Name = "cbbvaitro";
-            this.cbbvaitro.Size = new System.Drawing.Size(288, 36);
-            this.cbbvaitro.TabIndex = 84;
-            // 
-            // radioMale
-            // 
-            this.radioMale.AutoSize = true;
-            this.radioMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioMale.Location = new System.Drawing.Point(141, 195);
-            this.radioMale.Name = "radioMale";
-            this.radioMale.Size = new System.Drawing.Size(60, 24);
-            this.radioMale.TabIndex = 85;
-            this.radioMale.Text = "Nam";
-            this.radioMale.UseVisualStyleBackColor = true;
-            // 
-            // radioFeMale
-            // 
-            this.radioFeMale.AutoSize = true;
-            this.radioFeMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioFeMale.Location = new System.Drawing.Point(224, 196);
-            this.radioFeMale.Name = "radioFeMale";
-            this.radioFeMale.Size = new System.Drawing.Size(47, 24);
-            this.radioFeMale.TabIndex = 86;
-            this.radioFeMale.Text = "Nữ";
-            this.radioFeMale.UseVisualStyleBackColor = true;
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.ImageOffset = new System.Drawing.Point(-5, 0);
-            this.guna2Button2.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button2.Location = new System.Drawing.Point(966, 260);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(152, 57);
-            this.guna2Button2.TabIndex = 87;
-            this.guna2Button2.Text = "Xuất File";
             // 
             // clmanv
             // 
@@ -809,21 +760,129 @@
             this.clEmail.Name = "clEmail";
             this.clEmail.ReadOnly = true;
             // 
+            // cldathoiviec
+            // 
+            this.cldathoiviec.DataPropertyName = "DaThoiViec";
+            this.cldathoiviec.HeaderText = "Trạng thái";
+            this.cldathoiviec.Name = "cldathoiviec";
+            this.cldathoiviec.ReadOnly = true;
+            // 
+            // cbbvaitro
+            // 
+            this.cbbvaitro.BackColor = System.Drawing.Color.Transparent;
+            this.cbbvaitro.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbvaitro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbvaitro.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbvaitro.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbbvaitro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbvaitro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbbvaitro.ItemHeight = 30;
+            this.cbbvaitro.Location = new System.Drawing.Point(141, 108);
+            this.cbbvaitro.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbvaitro.Name = "cbbvaitro";
+            this.cbbvaitro.Size = new System.Drawing.Size(288, 36);
+            this.cbbvaitro.TabIndex = 84;
+            // 
+            // radioMale
+            // 
+            this.radioMale.AutoSize = true;
+            this.radioMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioMale.Location = new System.Drawing.Point(14, 8);
+            this.radioMale.Name = "radioMale";
+            this.radioMale.Size = new System.Drawing.Size(60, 24);
+            this.radioMale.TabIndex = 85;
+            this.radioMale.Text = "Nam";
+            this.radioMale.UseVisualStyleBackColor = true;
+            // 
+            // radioFeMale
+            // 
+            this.radioFeMale.AutoSize = true;
+            this.radioFeMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioFeMale.Location = new System.Drawing.Point(141, 8);
+            this.radioFeMale.Name = "radioFeMale";
+            this.radioFeMale.Size = new System.Drawing.Size(47, 24);
+            this.radioFeMale.TabIndex = 86;
+            this.radioFeMale.Text = "Nữ";
+            this.radioFeMale.UseVisualStyleBackColor = true;
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
+            this.guna2Button2.ImageOffset = new System.Drawing.Point(-5, 0);
+            this.guna2Button2.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2Button2.Location = new System.Drawing.Point(993, 273);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(152, 57);
+            this.guna2Button2.TabIndex = 87;
+            this.guna2Button2.Text = "Xuất File";
+            // 
+            // radioYes
+            // 
+            this.radioYes.AutoSize = true;
+            this.radioYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioYes.Location = new System.Drawing.Point(729, 237);
+            this.radioYes.Name = "radioYes";
+            this.radioYes.Size = new System.Drawing.Size(126, 24);
+            this.radioYes.TabIndex = 90;
+            this.radioYes.Text = "Chưa thôi việc";
+            this.radioYes.UseVisualStyleBackColor = true;
+            // 
+            // radioNo
+            // 
+            this.radioNo.AutoSize = true;
+            this.radioNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioNo.Location = new System.Drawing.Point(893, 237);
+            this.radioNo.Name = "radioNo";
+            this.radioNo.Size = new System.Drawing.Size(109, 24);
+            this.radioNo.TabIndex = 89;
+            this.radioNo.Text = "Đã thôi việc";
+            this.radioNo.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(605, 237);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(96, 19);
+            this.label13.TabIndex = 88;
+            this.label13.Text = "Trạng thái : ";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radioFeMale);
+            this.panel1.Controls.Add(this.radioMale);
+            this.panel1.Location = new System.Drawing.Point(141, 198);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(288, 45);
+            this.panel1.TabIndex = 91;
+            // 
             // FrmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1238, 715);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.radioYes);
+            this.Controls.Add(this.radioNo);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.guna2Button2);
-            this.Controls.Add(this.radioFeMale);
-            this.Controls.Add(this.radioMale);
             this.Controls.Add(this.cbbvaitro);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.txtemail);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2TextBox3);
@@ -860,6 +919,8 @@
             this.Load += new System.EventHandler(this.FrmEmployee_Load);
             this.guna2GroupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvnhanvien)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -905,6 +966,9 @@
         private System.Windows.Forms.RadioButton radioMale;
         private System.Windows.Forms.RadioButton radioFeMale;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private System.Windows.Forms.RadioButton radioYes;
+        private System.Windows.Forms.RadioButton radioNo;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmanv;
         private System.Windows.Forms.DataGridViewTextBoxColumn clvaitro;
         private System.Windows.Forms.DataGridViewTextBoxColumn clHoten;
@@ -913,5 +977,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clDiachi;
         private System.Windows.Forms.DataGridViewTextBoxColumn cldt;
         private System.Windows.Forms.DataGridViewTextBoxColumn clEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cldathoiviec;
+        private System.Windows.Forms.Panel panel1;
     }
 }

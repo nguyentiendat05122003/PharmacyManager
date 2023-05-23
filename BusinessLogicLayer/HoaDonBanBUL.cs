@@ -12,11 +12,11 @@ using Utility;
 
 namespace BusinessLogicLayer
 {
-    public class HoaDonBUL:IHoaDonBUL
+    public class HoaDonBanBUL:IHoaDonBanBUL
     {
         private readonly IHoaDonDAL dal = new HoaDonDAL();
 
-        public int Insert(HoaDon cls)
+        public int Insert(HoaDonBan cls)
         {
             if (checkHoaDon_ID(cls.Mahoadon) == 0)
                 return dal.Insert(cls.Ngaylap, cls.Tongtien, cls.Makhachhang,cls.Manhanvien);
@@ -33,20 +33,20 @@ namespace BusinessLogicLayer
         {
             return dal.checkHoaDon_ID(hoadonID);
         }
-        public int Update(HoaDon cls)
+        public int Update(HoaDonBan cls)
         {
             if (checkHoaDon_ID(cls.Mahoadon) != 0)
                 return dal.Update(cls.Mahoadon, cls.Ngaylap, cls.Tongtien, cls.Makhachhang, cls.Manhanvien);
             else return -1;
         }
 
-        public IList<HoaDon> getAll()
+        public IList<HoaDonBan> getAll()
         {
             System.Data.DataTable table = dal.getAll();
-            IList<HoaDon> list = new List<HoaDon>();
+            IList<HoaDonBan> list = new List<HoaDonBan>();
             foreach (DataRow row in table.Rows)
             {
-                HoaDon cls = new HoaDon();
+                HoaDonBan cls = new HoaDonBan();
                 cls.Mahoadon = row.Field<int>(0);
                 cls.Ngaylap = row.Field<DateTime>(1);
                 cls.Tongtien = row.Field<float>(2);
@@ -61,13 +61,18 @@ namespace BusinessLogicLayer
             var list = getAll();
             return list.Cast<dynamic>().ToList();
         }
-        public IList<HoaDon> SearchLinq(HoaDon cls)
+        public IList<HoaDonBan> SearchLinq(HoaDonBan cls)
         {
             return getAll().Where(x => (string.IsNullOrEmpty(cls.Mahoadon.ToString()) || x.Mahoadon.ToString().Contains(cls.Mahoadon.ToString()))).ToList();
         }
         public float GetDoanhThu(int month,int year)
         {
             return dal.GetDoanhThu(month,year);
+        }
+
+        public HoaDonBan GetLastHD()
+        {
+            return getAll().OrderByDescending(hd => hd.Mahoadon).FirstOrDefault();
         }
     }
 }

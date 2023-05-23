@@ -9,9 +9,9 @@ namespace DataAccessLayer.Interface
 {
     public interface IProviderDAL
     {
-        int Insert(string tenncc, string diachi, string dienthoai, string email);
+        int Insert(string tenncc, string diachi, string dienthoai, string email,bool ngunghoptac);
         int Delete(int mancc);
-        int Update(int mancc, string tenncc, string diachi, string dienthoai, string email);
+        int Update(int mancc, string tenncc, string diachi, string dienthoai, string email,bool ngunghoptac);
         DataTable getAll();
         int checkNCC_ID(int man);
     }

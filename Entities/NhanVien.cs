@@ -16,6 +16,7 @@ namespace Entities
         protected string email;
         protected DateTime ngaysinh;
         protected bool gioitinh;
+        private bool dathoiviec;
         public NhanVien()
         {
         }
@@ -29,8 +30,9 @@ namespace Entities
             this.email = cls.email;
             this.ngaysinh = cls.ngaysinh;
             this.gioitinh = cls.gioitinh;
+            this.Dathoiviec = cls.Dathoiviec;
         }
-        public NhanVien(int vaitro, string hoten, bool gioitinh, DateTime ngaysinh, string diachi, string dienthoai, string email)
+        public NhanVien(int vaitro, string hoten, bool gioitinh, DateTime ngaysinh, string diachi, string dienthoai, string email,bool dathoiviec)
         {
             this.vaitro = vaitro;
             this.hoten = hoten;
@@ -39,9 +41,10 @@ namespace Entities
             this.email = email;
             this.ngaysinh = ngaysinh;
             this.gioitinh = gioitinh;
+            this.Dathoiviec = dathoiviec;
         }
 
-        public NhanVien(int vaitro, string hoten, bool gioitinh, DateTime ngaysinh, string diachi, string dienthoai, string email,int manhanvien)
+        public NhanVien(int vaitro, string hoten, bool gioitinh, DateTime ngaysinh, string diachi, string dienthoai, string email,int manhanvien,bool dathoiviec)
         {
             this.vaitro = vaitro;
             this.hoten = hoten;
@@ -50,7 +53,8 @@ namespace Entities
             this.email = email;
             this.ngaysinh = ngaysinh;
             this.gioitinh = gioitinh;
-            this.MaNhanVien = manhanvien;
+            this.maNhanVien = manhanvien;
+            this.Dathoiviec=dathoiviec;
         }
 
         public int MaNhanVien
@@ -93,5 +97,7 @@ namespace Entities
             get { return gioitinh; }
             set { gioitinh = value; }
         }
+
+        public bool Dathoiviec { get => dathoiviec; set => dathoiviec = value; }
     }
 }

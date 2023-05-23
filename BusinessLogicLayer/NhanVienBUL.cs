@@ -16,10 +16,10 @@ namespace BusinessLogicLayer
     public class NhanVienBUL:INhanVienBUL
     {
         private readonly INhanVienDAL dal = new NhanVienDAL();
-
+        ILoaiNhanVienBUL loainv = new LoaiNhanVienBUL();
         public int Insert(NhanVien cls)
         {
-            return dal.Insert(cls.VaiTro,cls.Hoten,cls.Gioitinh, cls.Ngaysinh , cls.Diachi, cls.Dienthoai, cls.Email);
+            return dal.Insert(cls.VaiTro,cls.Hoten,cls.Gioitinh, cls.Ngaysinh , cls.Diachi, cls.Dienthoai, cls.Email,cls.Dathoiviec);
         }
         public IList<NhanVien> getAll()
         {
@@ -36,6 +36,7 @@ namespace BusinessLogicLayer
                 cls.Diachi = row.Field<string>(5);
                 cls.Dienthoai = row.Field<string>(6);
                 cls.Email = row.Field<string>(7);
+                cls.Dathoiviec = row.Field<bool>(8);
                 list.Add(cls);
             }
             return list;
@@ -53,7 +54,7 @@ namespace BusinessLogicLayer
         public int Update(NhanVien nv)
         {
             if (checkNhanVien_ID(nv.MaNhanVien) != 0)
-                return dal.Update(nv.MaNhanVien, nv.VaiTro, nv.Hoten , nv.Gioitinh, nv.Ngaysinh, nv.Diachi,  nv.Dienthoai,  nv.Email);
+                return dal.Update(nv.MaNhanVien, nv.VaiTro, nv.Hoten , nv.Gioitinh, nv.Ngaysinh, nv.Diachi,  nv.Dienthoai,  nv.Email,nv.Dathoiviec);
             else return -1;
         }
         
@@ -68,29 +69,7 @@ namespace BusinessLogicLayer
                 (x.Ngaysinh.ToString().Contains(value)) ||
                 (string.IsNullOrEmpty(value) || x.Gioitinh.ToString().Contains(value)))
                 .ToList();
-        }
-        public void ThemTuExcel(string filePath)
-        {
-            var messageError = "";
-            var data = ExcelHelper.ReadFromExcelFile(filePath, 1, out messageError);
-            if (string.IsNullOrEmpty(messageError))
-            {
-                foreach (DataRow row in data.Rows)
-                {
-                    NhanVien nv = new NhanVien();
-                    nv.VaiTro = row.Field<int>("");
-                    nv.Hoten = row.Field<string>("MaLoai");
-                    nv.Diachi = row.Field<string>("DiaChi");
-                    nv.Dienthoai = row.Field<string>("DienThoai");
-                    nv.Email = row.Field<string>("Email");
-                    nv.Ngaysinh = DateTime.ParseExact(row.Field<string>("NgaySinh"), "dd-MM-yyyy", CultureInfo.InvariantCulture);
-                    nv.Gioitinh = row.Field<bool>("GioiTinh");
-                    dal.Insert(nv);
-                }
-            }
-            else throw new Exception(messageError);
-
-        }
+        }       
         public void KetXuatWord(string templatePath, string exportPath)
         {
             INhanVienBUL nv = new NhanVienBUL();
@@ -100,11 +79,11 @@ namespace BusinessLogicLayer
             ExportDocx.CreateClassTemplate(exportPath, dictionaryData, listData);
         }
 
-        public List<dynamic> getAllJoin(ILoaiNhanVienBUL loainv)
+        public List<dynamic> getAllJoin()
         {
             var nv_loainv = (from nv in getAll()
                                     join pd in loainv.getAll() on nv.VaiTro equals pd.MaLoai
-                                    select new { MaNhanVien = nv.MaNhanVien, HoTen = nv.Hoten, Gioitinh = nv.Gioitinh, NgaySinh =nv.Ngaysinh, Vaitro=nv.VaiTro, DiaChi=nv.Diachi, DienThoai=nv.Dienthoai, Email=nv.Email, Tenvt = pd.TenLoai});
+                                    select new { MaNhanVien = nv.MaNhanVien, HoTen = nv.Hoten, Gioitinh = nv.Gioitinh, NgaySinh =nv.Ngaysinh, Vaitro=nv.VaiTro, DiaChi=nv.Diachi, DienThoai=nv.Dienthoai, Email=nv.Email, Tenvt = pd.TenLoai, DaThoiViec =nv.Dathoiviec});
             return nv_loainv.Cast<dynamic>().ToList();
         }
     }

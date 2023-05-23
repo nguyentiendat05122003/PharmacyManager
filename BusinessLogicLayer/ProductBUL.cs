@@ -22,24 +22,20 @@ namespace BusinessLogicLayer
         public int Insert(Product pro)
         {
             if (checkProduct_ID(pro.Mathuoc) == 0)
-                return dal.Insert(pro.Tenthuoc,pro.Giaban,pro.Hansudung,pro.Mancc,pro.Madonvitinh);
+                return dal.Insert(pro.Tenthuoc,pro.Giaban,pro.Hansudung,pro.Dungkinhdoanh,pro.Madonvitinh,pro.Soluong);
             else return -1;
         }
-       
-
         public int Delete(int productId)
         {
             if (checkProduct_ID(productId) != 0)
                 return dal.Delete(productId);
             else return -1;
-        }
-        /// <summary>
-       
+        }  
 
         public int Update(Product pro)
         {
             if (checkProduct_ID(pro.Mathuoc) != 0)
-                return dal.Update(pro.Mathuoc,pro.Tenthuoc, pro.Giaban, pro.Hansudung, pro.Mancc, pro.Madonvitinh);
+                return dal.Update(pro.Mathuoc,pro.Tenthuoc, pro.Giaban, pro.Hansudung, pro.Dungkinhdoanh, pro.Madonvitinh,pro.Soluong);
             else return -1;
         }
        
@@ -55,9 +51,10 @@ namespace BusinessLogicLayer
                 cls.Tenthuoc = row.Field<string>(1);
                 cls.Giaban = row.Field<float>(2);
                 cls.Hansudung =row.Field<DateTime>(3);
-                cls.Mancc =row.Field<int>(4);
+                cls.Dungkinhdoanh = row.Field<bool>(4);
                 cls.Madonvitinh = row.Field<int>(5);
-               list.Add(cls);
+                cls.Soluong = row.Field<int>(6);
+                list.Add(cls);
             }
             return list;
         }
@@ -74,9 +71,8 @@ namespace BusinessLogicLayer
         public List<dynamic> getAllJoin()
         {
             var product_provider = (from pd in getAll()
-                                    join pv in provider.getAll() on pd.Mancc equals pv.Mancc
                                     join dv in dvt.getAll() on pd.Madonvitinh equals dv.Madonvitinh
-                                    select new { Mathuoc = pd.Mathuoc, Tenthuoc = pd.Tenthuoc, Giaban = pd.Giaban, Hansudung = pd.Hansudung, Mancc = pd.Mancc, Donvitinh = pd.Madonvitinh, Tenncc = pv.Tenncc,TenDonvi = dv.Tendonvitinh });
+                                    select new { Mathuoc = pd.Mathuoc, Tenthuoc = pd.Tenthuoc, Giaban = pd.Giaban, Hansudung = pd.Hansudung, Donvitinh = pd.Madonvitinh, TenDonvi = dv.Tendonvitinh,TrangThai = pd.Dungkinhdoanh,SoLuong=pd.Soluong });
             return product_provider.Cast<dynamic>().ToList();
         }
 
@@ -93,9 +89,9 @@ namespace BusinessLogicLayer
                     nv.Tenthuoc = row.Field<string>("TenThuoc");
                     nv.Giaban =float.Parse(row.Field<string>("GiaBan"));
                     nv.Hansudung = DateTime.ParseExact(row.Field<string>("HanSuDung"), "dd-MM-yyyy", CultureInfo.InvariantCulture);
-                    nv.Mancc =int.Parse(row.Field<string>("MaNCC"));
+                   // nv.Mancc =int.Parse(row.Field<string>("MaNCC"));
                     nv.Madonvitinh = int.Parse(row.Field<string>("MaDonViTinh"));
-                    dal.Insert(nv);
+                    //dal.Insert(nv);
                 }
             }
             else throw new Exception(messageError);
@@ -108,6 +104,14 @@ namespace BusinessLogicLayer
             Dictionary<string, string> dictionaryData = new Dictionary<string, string>();
             System.IO.File.Copy(templatePath, exportPath, true);
             ExportDocx.CreateProductTemplate(exportPath, dictionaryData, list);
+        }
+        public int GetSoluong(int mathuoc)
+        {
+            int slg = getAll()
+                .Where(t => t.Mathuoc == mathuoc)
+                .Select(t => t.Soluong)
+                .FirstOrDefault();
+            return slg;
         }
     }
 }

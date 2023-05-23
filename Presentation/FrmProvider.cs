@@ -49,7 +49,7 @@ namespace Presentation
             {
                 try
                 {
-                    int val = provider.Insert(new Provider(txttenncc.Text, txtdiachi.Text, txtdienthoai.Text,txtemail.Text));
+                    int val = provider.Insert(new Provider(txttenncc.Text, txtdiachi.Text, txtdienthoai.Text,txtemail.Text,radioYes.Checked));
                     LoadData();
                     if (val == -1)
                         MessageBox.Show("Thêm dữ liệu không thành công, hãy kiểm tra lại!", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -74,6 +74,7 @@ namespace Presentation
             cl.Diachi = txtdiachi.Text;
             cl.Dienthoai = txtdienthoai.Text;
             cl.Email = txtemail.Text;
+            cl.Ngunghoptac = radioYes.Checked;  
             try
             {
                 int val = provider.Update(cl);
@@ -130,11 +131,20 @@ namespace Presentation
             txtdiachi.Text = dgvProvider[2, dgvProvider.CurrentCell.RowIndex].Value.ToString();
             txtdienthoai.Text = dgvProvider[3, dgvProvider.CurrentCell.RowIndex].Value.ToString();
             txtemail.Text = dgvProvider[4, dgvProvider.CurrentCell.RowIndex].Value.ToString();
+
+            string state = dgvProvider[5, dgvProvider.CurrentCell.RowIndex].Value.ToString();
+            if (state == "True")
+            {
+                radioYes.Checked = true;
+            }
+            else if (state == "False")
+            {
+                radioNo.Checked = true;
+            }
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
-
         }
     }
 }

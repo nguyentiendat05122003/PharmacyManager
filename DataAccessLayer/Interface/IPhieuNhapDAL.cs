@@ -9,9 +9,9 @@ namespace DataAccessLayer.Interface
 {
     public interface IPhieuNhapDAL
     {
-        int Insert(int mathuoc, DateTime ngaynhap, float tongtien, int manhanvien);
+        int Insert(int mancc, DateTime ngaynhap, float tongtien, int manhanvien);
         int Delete(int maphieunhap);
-        int Update(int maphieunhap, int mathuoc, DateTime ngaynhap, float tongtien, int manhanvien);
+        int Update(int maphieunhap, int mancc, DateTime ngaynhap, float tongtien, int manhanvien);
         DataTable getAll();
         int checkPhieuNhap_ID(int maphieunhap);
     }

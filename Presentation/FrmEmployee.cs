@@ -30,7 +30,7 @@ namespace Presentation
         }
         public void LoadData()
         {
-            dgvnhanvien.DataSource = NV.getAllJoin(loainv);
+            dgvnhanvien.DataSource = NV.getAllJoin();
         }
         private void FrmEmployee_Load(object sender, EventArgs e)
         {
@@ -64,7 +64,7 @@ namespace Presentation
             {
                 try {
 
-                    int val = NV.Insert(new NhanVien(((int)cbbvaitro.SelectedValue), txthoten.Text, radioMale.Checked, DateTime.Parse(txtngaysinh.Text), txtdiachi.Text, txtdienthoai.Text, txtemail.Text));
+                    int val = NV.Insert(new NhanVien(((int)cbbvaitro.SelectedValue), txthoten.Text, radioMale.Checked, DateTime.Parse(txtngaysinh.Text), txtdiachi.Text, txtdienthoai.Text, txtemail.Text,radioYes.Checked));
                     LoadData(); 
                     if (val == -1)
                         MessageBox.Show("Thêm dữ liệu không thành công, hãy kiểm tra lại!", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -119,7 +119,7 @@ namespace Presentation
             txtngaysinh.Text = Utility.Tools.CatXauDate(dgvnhanvien[3, dgvnhanvien.CurrentCell.RowIndex].Value.ToString());
             string gender = dgvnhanvien[4, dgvnhanvien.CurrentCell.RowIndex].Value.ToString();
                 if (gender == "True")
-                {
+                {              
                     radioMale.Checked = true;
                 }
                 else if (gender == "False")
@@ -129,6 +129,15 @@ namespace Presentation
             txtdiachi.Text = dgvnhanvien[5, dgvnhanvien.CurrentCell.RowIndex].Value.ToString();
             txtdienthoai.Text = dgvnhanvien[6, dgvnhanvien.CurrentCell.RowIndex].Value.ToString();
             txtemail.Text = dgvnhanvien[7, dgvnhanvien.CurrentCell.RowIndex].Value.ToString();
+            string state = dgvnhanvien[8, dgvnhanvien.CurrentCell.RowIndex].Value.ToString();
+            if (state == "True")
+            {
+                radioNo.Checked = true;
+            }
+            else if (state == "False")
+            {
+                radioYes.Checked = true;
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -168,5 +177,12 @@ namespace Presentation
 
             }
         }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            ResetForm();
+        }
+
+        
     }
 }
