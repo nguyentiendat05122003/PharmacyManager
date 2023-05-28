@@ -43,7 +43,11 @@ namespace Presentation
 
         private void FrmHome_Load(object sender, EventArgs e)
         {
-            timer.Start();         
+            timer.Start();    
+            if(Bien.loainv == 2)
+            {
+                picThongKe.Hide();
+            }
         }
         private float GetDataForMonth(int month, int year)
         {
@@ -86,6 +90,40 @@ namespace Presentation
 
             chartRevenue.ChartAreas[0].AxisX.Title = "Tháng";
             revenueSeries.LegendText = "Doanh Thu (triệu)";
+        }
+
+        private void guna2PictureBox6_Click(object sender, EventArgs e)
+        {
+            FrmXemPhieuNhap frm = new FrmXemPhieuNhap();
+            frm.Show();
+        }
+
+        private void guna2PictureBox7_Click(object sender, EventArgs e)
+        {
+            FrmXemHoaDon frm = new FrmXemHoaDon();
+            frm.Show();
+        }
+
+        private void picThongKe_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Microsoft Word | *.docx";
+            saveFileDialog.Title = "Lưu thông tin lớp";
+            saveFileDialog.ShowDialog();
+            if (saveFileDialog.FileName != "")
+            {
+                try
+                {
+                    hoadon.KetXuatWord(@"Template\ThongKe_Template.docx", saveFileDialog.FileName);
+                    MessageBox.Show("Kết xuất thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Thông báo lỗi");
+                }
+
+            }
+
         }
     }
 }

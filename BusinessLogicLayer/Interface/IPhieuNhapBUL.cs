@@ -15,6 +15,13 @@ namespace BusinessLogicLayer.Interface
         IList<PhieuNhap> getAll();
         int checkPhieuNhap_ID(int phieunhapID);
         PhieuNhap GetLastPN();
+
+        List<dynamic> GetAllJoinFull();
+
+        IList<dynamic> SearchLinq(string value);
         void KetXuatWord(string ncc, string templatePath, string exportPath);
+
+        float GetDoanhSoNhap(int month, int year);
+
     }
 }

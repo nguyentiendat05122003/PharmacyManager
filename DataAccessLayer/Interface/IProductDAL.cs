@@ -15,5 +15,6 @@ namespace DataAccessLayer.Interface
         int Update(int mathuoc, string tenthuoc, float giaban, DateTime hansudung, bool dungkinhdoanh, int madonvitinh,int soluong);
         DataTable getAll();
         int checkProduct_ID(int mathuoc);
+        int Insert(Product pro);
     }
 }

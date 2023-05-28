@@ -28,7 +28,7 @@ namespace Presentation
 
         public void LoadData()
         {
-            dgvkhachhang.DataSource = kh.getAll();
+            dgvkhachhang.DataSource = kh.getAllFilter();
         }
         private void FrmCustomer_Load(object sender, EventArgs e)
         {
@@ -52,7 +52,7 @@ namespace Presentation
             {
                 try
                 {
-                    int val = kh.Insert(new KhachHang(txthoten.Text, txtdiachi.Text, txtsdt.Text,txtemail.Text,rdbYes.Checked));
+                    int val = kh.Insert(new KhachHang(txthoten.Text, txtdiachi.Text, txtsdt.Text,txtemail.Text,rdbNo.Checked));
                     LoadData();
                     if (val == -1)
                         MessageBox.Show("Thêm dữ liệu không thành công, hãy kiểm tra lại!", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -77,7 +77,7 @@ namespace Presentation
             cl.Diachi = txtdiachi.Text;
             cl.Dienthoai = txtsdt.Text;
             cl.Email = txtemail.Text;
-            cl.Daxoa = rdbYes.Checked;
+            cl.Daxoa = rdbNo.Checked;
             try
             {
                 int val = kh.Update(cl);
@@ -124,11 +124,11 @@ namespace Presentation
             txtsdt.Text = dgvkhachhang[3, dgvkhachhang.CurrentCell.RowIndex].Value.ToString();
             txtemail.Text = dgvkhachhang[4, dgvkhachhang.CurrentCell.RowIndex].Value.ToString();
             string state = dgvkhachhang[5, dgvkhachhang.CurrentCell.RowIndex].Value.ToString();
-            if (state == "True")
+            if (state == "False")
             {
                 rdbYes.Checked = true;
             }
-            else if (state == "False")
+            else if (state == "True")
             {
                 rdbNo.Checked = true;
             }

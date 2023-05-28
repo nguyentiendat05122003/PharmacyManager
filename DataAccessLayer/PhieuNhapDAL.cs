@@ -16,6 +16,8 @@ namespace DataAccessLayer
         private const string PARM_NGAYNHAP = "@ngaynhap";
         private const string PARM_TONGTIEN = "@tongtien";
         private const string PARM_MANHANVIEN = "@manhanvien";
+        private const string PARM_MONTH = "@Month";
+        private const string PARM_YEAR = "@Year";
         public int Insert(int mancc, DateTime ngaynhap, float tongtien, int manhanvien)
         {
             SqlParameter[] parm = new SqlParameter[]
@@ -86,6 +88,20 @@ namespace DataAccessLayer
             };
             parm[0].Value = classID;
             return (int)SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_PhieuNhap_Check", parm);
+        }
+
+        public float GetDoanhSoNhap(int month, int year)
+        {
+            SqlParameter[] parm = new SqlParameter[]
+            {
+                new SqlParameter(PARM_MONTH,SqlDbType.Int),
+                new SqlParameter(PARM_YEAR,SqlDbType.Int),
+            };
+            parm[0].Value = month;
+            parm[1].Value = year;
+            object result = SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, "GetDoanhSoNhap", parm);
+            float doanhThu = (result == null || result == DBNull.Value) ? 0 : Convert.ToSingle(result);
+            return doanhThu;
         }
     }
 }

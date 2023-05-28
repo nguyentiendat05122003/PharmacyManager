@@ -45,9 +45,14 @@ namespace Presentation
         private void FrmSaleProducts_Load(object sender, EventArgs e)
         {
             dgvproduct.AutoGenerateColumns = false;
-            dgvproduct.DataSource = product.getAll();
+            dgvproduct.DataSource = product.getAllFilter();
             btnPay.Enabled= false;  
             btnDestroy.Enabled= false;
+        }
+        public void LoadDgv()
+        {
+            dgvproduct.AutoGenerateColumns = false;
+            dgvproduct.DataSource = product.getAllFilter();
         }
 
         private void dgvproduct_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -206,6 +211,12 @@ namespace Presentation
         {
             dgvproduct.AutoGenerateColumns = false;
             dgvproduct.DataSource = product.getAll();
+        }
+
+        private void btnSeeHoadon_Click(object sender, EventArgs e)
+        {
+            FrmXemHoaDon frm = new FrmXemHoaDon();
+            frm.Show();
         }
     }
 }

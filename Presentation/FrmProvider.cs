@@ -26,16 +26,16 @@ namespace Presentation
             dgvProvider.DataSource = provider.getAll();         
             LoadData();
             ResetForm();
+            dgvProvider.RowPrePaint += dgvProvider_RowPrePaint;
         }
         private void ResetForm()
         {
-            txtmancc.Text = "Mã lớp tự động tăng!";
+            txtmancc.Text = "Mã ncc tự động tăng!";
             txtdiachi.Text = "";
             txtdienthoai.Text = "";
             txttenncc.Text = "";
             txtemail.Text = "";
         }
-
         public void LoadData()
         {
             dgvProvider.DataSource = provider.getAll();
@@ -49,7 +49,7 @@ namespace Presentation
             {
                 try
                 {
-                    int val = provider.Insert(new Provider(txttenncc.Text, txtdiachi.Text, txtdienthoai.Text,txtemail.Text,radioYes.Checked));
+                    int val = provider.Insert(new Provider(txttenncc.Text, txtdiachi.Text, txtdienthoai.Text,txtemail.Text,radioNo.Checked));
                     LoadData();
                     if (val == -1)
                         MessageBox.Show("Thêm dữ liệu không thành công, hãy kiểm tra lại!", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -74,7 +74,7 @@ namespace Presentation
             cl.Diachi = txtdiachi.Text;
             cl.Dienthoai = txtdienthoai.Text;
             cl.Email = txtemail.Text;
-            cl.Ngunghoptac = radioYes.Checked;  
+            cl.Ngunghoptac = radioNo.Checked;  
             try
             {
                 int val = provider.Update(cl);
@@ -131,13 +131,12 @@ namespace Presentation
             txtdiachi.Text = dgvProvider[2, dgvProvider.CurrentCell.RowIndex].Value.ToString();
             txtdienthoai.Text = dgvProvider[3, dgvProvider.CurrentCell.RowIndex].Value.ToString();
             txtemail.Text = dgvProvider[4, dgvProvider.CurrentCell.RowIndex].Value.ToString();
-
             string state = dgvProvider[5, dgvProvider.CurrentCell.RowIndex].Value.ToString();
-            if (state == "True")
+            if (state == "False")
             {
                 radioYes.Checked = true;
             }
-            else if (state == "False")
+            else if (state == "True")
             {
                 radioNo.Checked = true;
             }
@@ -145,6 +144,14 @@ namespace Presentation
         private void btnExit_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void dgvProvider_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (dgvProvider.Rows[e.RowIndex].Cells["clhoptac"].Value.ToString() == "True")
+            {
+                dgvProvider.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+            }
         }
     }
 }

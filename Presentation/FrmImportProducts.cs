@@ -45,7 +45,7 @@ namespace Presentation
             dgvsanpham.AutoGenerateColumns = false;
             dgvncc.AutoGenerateColumns = false;
             dgvncc.DataSource = provider.GetProviderIsContact();
-            dgvsanpham.DataSource = product.getAllJoin();
+            dgvsanpham.DataSource = product.getAllFilter();
             lbtongtien.Text = "0 VND";
             btnOK.Enabled = false;
             btnDestroy.Enabled = false;
@@ -61,8 +61,15 @@ namespace Presentation
 
         private void dgvsanpham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(txtmancc.Text =="" && txttenncc.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn thông tin nhà cung cấp trước");
+            }
+            else
+            {
             txtmathuoc.Text = dgvsanpham[0, dgvsanpham.CurrentCell.RowIndex].Value.ToString();
-            txttenthuoc.Text = dgvsanpham[1, dgvsanpham.CurrentCell.RowIndex].Value.ToString();
+            txttenthuoc.Text = dgvsanpham[2, dgvsanpham.CurrentCell.RowIndex].Value.ToString();
+            }
         }
         private void tinhTien()
         {
@@ -101,7 +108,6 @@ namespace Presentation
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
-            //Thêm vào database
             DateTime today = DateTime.Today;
             string mancc = "";
             object value = dgvphieunhap.Rows[0].Cells["clncc"].Value;
@@ -210,7 +216,7 @@ namespace Presentation
             {
                 txtmancc.Text = dgvncc[0, dgvncc.CurrentCell.RowIndex].Value.ToString();
                 txttenncc.Text = dgvncc[1, dgvncc.CurrentCell.RowIndex].Value.ToString();
-                List<Product> danhSachSanPham = GetSanPhamByNhaCungCap(int.Parse(dgvncc[0, dgvncc.CurrentCell.RowIndex].Value.ToString()));
+                List<Product> danhSachSanPham = product.GetSanPhamByNhaCungCap(int.Parse(dgvncc[0, dgvncc.CurrentCell.RowIndex].Value.ToString()));
                 dgvsanpham.DataSource = danhSachSanPham;
             }
         }
@@ -235,23 +241,17 @@ namespace Presentation
                     MessageBox.Show(ex.Message, "Thông báo lỗi");
                 }
             }
-        }
-
-        private List<Product> GetSanPhamByNhaCungCap(int maNCC)
-        {         
-                var query = from t in product.getAll()
-                            join ctpn in chitietpn.getAll() on t.Mathuoc equals ctpn.Mathuoc
-                            join pn in phieunhap.getAll() on ctpn.Maphieunhap equals pn.Maphieunhap
-                            join ncc in ncc.getAll() on pn.Mancc equals ncc.Mancc
-                            where ncc.Mancc == maNCC
-                            select t;
-                return query.ToList();       
-        }
-
+        }      
         private void btnreload_Click(object sender, EventArgs e)
         {
             ResetForm();
             FrmImportProducts_Load(sender, e);
+        }
+
+        private void btnSeeAll_Click(object sender, EventArgs e)
+        {
+            FrmXemPhieuNhap frm = new FrmXemPhieuNhap();
+            frm.Show();
         }
     }
 }

@@ -13,6 +13,8 @@ namespace DataAccessLayer.Interface
         int Delete(int makh);
         int Update(int makh, string hoten, string diachi, string dienthoai, string email, bool daxoa);
         DataTable getAll();
+        DataTable getAllFilter();
+
         int checkKh_ID(int makh);
     }
 }

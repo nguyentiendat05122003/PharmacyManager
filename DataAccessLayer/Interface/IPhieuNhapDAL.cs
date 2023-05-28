@@ -14,5 +14,6 @@ namespace DataAccessLayer.Interface
         int Update(int maphieunhap, int mancc, DateTime ngaynhap, float tongtien, int manhanvien);
         DataTable getAll();
         int checkPhieuNhap_ID(int maphieunhap);
+        float GetDoanhSoNhap(int month, int year);
     }
 }

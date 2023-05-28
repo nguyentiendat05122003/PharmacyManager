@@ -16,7 +16,6 @@ namespace BusinessLogicLayer
     public class ChiTietPhieuNhapBUL : IChiTietPhieuNhapBUL
     {
         private readonly IChiTietPhieuNhapDAL dal = new ChiTietPhieuNhapDAL();
-
         public int Insert(ChiTietPhieuNhap cls)
         {
             if (checkChiTietPN_ID(cls.Machitietphieunhap) == 0)

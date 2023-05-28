@@ -17,7 +17,8 @@ namespace BusinessLogicLayer
     public class PhieuNhapBUL : IPhieuNhapBUL
     {
         private readonly IPhieuNhapDAL dal = new PhieuNhapDAL();
-
+        
+            
         public int Insert(PhieuNhap cls)
         {
             if (checkPhieuNhap_ID(cls.Maphieunhap) == 0)
@@ -60,7 +61,10 @@ namespace BusinessLogicLayer
         {
             return dal.checkPhieuNhap_ID(classID);
         }
-
+        public float GetDoanhSoNhap(int month, int year)
+        {
+            return dal.GetDoanhSoNhap(month, year);
+        }
         public IList<PhieuNhap> SearchLinq(PhieuNhap cls)
         {
             return getAll();
@@ -75,5 +79,31 @@ namespace BusinessLogicLayer
         {
             
         }
+        public List<dynamic> GetAllJoinFull()
+        {
+            IChiTietPhieuNhapBUL chiTiet = new ChiTietPhieuNhapBUL();
+            IProviderBUL nhacungcap = new ProviderBUL();
+            INhanVienBUL nhanvien = new NhanVienBUL();
+            IProductBUL product = new ProductBUL();
+            var query = from t in getAll()
+                        join ctpn in chiTiet.getAll() on t.Maphieunhap equals ctpn.Maphieunhap
+                        join ncc in nhacungcap.getAll() on t.Mancc equals ncc.Mancc
+                        join nv in nhanvien.getAll() on t.Manhanvien equals nv.MaNhanVien
+                        join thuoc in product.getAll() on ctpn.Mathuoc equals thuoc.Mathuoc
+                        select new { MaPhieuNhap = t.Maphieunhap, Tencc = ncc.Tenncc, Tenv = nv.Hoten, TongTien = t.Tongtien, Tenthuoc = thuoc.Tenthuoc,DonGiaNhap=ctpn.Dongia,DonGiaBan=thuoc.Giaban,Soluong = ctpn.Soluong, NgayLap = t.Ngaynhap };
+            return query.Cast<dynamic>().ToList(); ;
+        }
+
+        public IList<dynamic> SearchLinq(string value)
+        {
+            string newValue = value.ToLower();
+            return GetAllJoinFull().Where(x =>
+                (string.IsNullOrEmpty(value) || x.NgayLap.ToString().Contains(value) ||
+                (x.Tencc.ToString() == value) ||
+                x.Tencc.ToLower().Contains(newValue))
+            ).ToList();
+        }
+
+
     }
 }

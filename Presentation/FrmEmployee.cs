@@ -39,6 +39,7 @@ namespace Presentation
             txtmanv.Text = "Mã nhân viên tự động tăng!";
             cbbvaitro.DataSource = loainv.getAll();
             SetDisplayCbb(cbbvaitro, "MaLoai", "TenLoai");
+            dgvnhanvien.RowPrePaint += dgvnhanvien_RowPrePaint;
         }
         private void SetDisplayCbb(System.Windows.Forms.ComboBox cbb, string value, string name)
         {
@@ -64,7 +65,7 @@ namespace Presentation
             {
                 try {
 
-                    int val = NV.Insert(new NhanVien(((int)cbbvaitro.SelectedValue), txthoten.Text, radioMale.Checked, DateTime.Parse(txtngaysinh.Text), txtdiachi.Text, txtdienthoai.Text, txtemail.Text,radioYes.Checked));
+                    int val = NV.Insert(new NhanVien(((int)cbbvaitro.SelectedValue), txthoten.Text, radioMale.Checked, DateTime.Parse(txtngaysinh.Text), txtdiachi.Text, txtdienthoai.Text, txtemail.Text,radioNo.Checked));
                     LoadData(); 
                     if (val == -1)
                         MessageBox.Show("Thêm dữ liệu không thành công, hãy kiểm tra lại!", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -92,7 +93,8 @@ namespace Presentation
             pro.Ngaysinh = DateTime.Parse(txtngaysinh.Text);
             pro.Diachi = txtdiachi.Text;
             pro.Email = txtemail.Text;
-            pro.Dienthoai = txtdienthoai.Text;         
+            pro.Dienthoai = txtdienthoai.Text;
+            pro.Dathoiviec = radioNo.Checked;
             try
             {
                 int val = NV.Update(pro);
@@ -183,6 +185,12 @@ namespace Presentation
             ResetForm();
         }
 
-        
+        private void dgvnhanvien_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (dgvnhanvien.Rows[e.RowIndex].Cells["cldathoiviec"].Value.ToString() == "True")
+            {
+                dgvnhanvien.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+            }
+        }
     }
 }

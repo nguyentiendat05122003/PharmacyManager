@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entities;
 using System.Text.RegularExpressions;
+using System.Runtime.Remoting.Contexts;
 
 namespace DataAccessLayer
 {
@@ -100,6 +101,51 @@ namespace DataAccessLayer
             };
             parm[0].Value = mathuoc;
             return (int)SqlHelper.ExecuteScalar(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_Product_Check", parm);
-        }          
+        }
+
+        public int Insert(Product product)
+        {
+            SqlParameter[] parm = new SqlParameter[]
+            {
+                new SqlParameter(PARM_TENTHUOC,SqlDbType.NVarChar,50),
+                new SqlParameter(PARM_GIABAN,SqlDbType.Float),
+                new SqlParameter(PARM_HANSUDUNG,SqlDbType.DateTime),
+                new SqlParameter(PARM_DUNGKINHDOANH,SqlDbType.Bit),
+                new SqlParameter(PARM_MADONVITINH,SqlDbType.Int),
+                new SqlParameter(PARM_SPLUONG,SqlDbType.Int),
+            };
+            if (string.IsNullOrEmpty(product.Tenthuoc))
+                parm[0].Value = DBNull.Value;
+            else
+                parm[0].Value = product.Tenthuoc;
+
+            if (string.IsNullOrEmpty(product.Giaban.ToString()))
+                parm[1].Value = DBNull.Value;
+            else
+                parm[1].Value = product.Giaban;
+
+            if (string.IsNullOrEmpty(product.Hansudung.ToString()))
+                parm[2].Value = DBNull.Value;
+            else
+                parm[2].Value = product.Hansudung;
+
+
+            if (string.IsNullOrEmpty(product.Madonvitinh.ToString()))
+                parm[3].Value = DBNull.Value;
+            else
+                parm[3].Value = product.Madonvitinh;
+
+            if (string.IsNullOrEmpty(product.Madonvitinh.ToString()))
+                parm[4].Value = DBNull.Value;
+            else
+                parm[4].Value = product.Madonvitinh;
+
+            if (string.IsNullOrEmpty(product.Soluong.ToString()))
+                parm[5].Value = DBNull.Value;
+            else
+                parm[5].Value = product.Soluong;
+            return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_Products_Insert", parm);
+        }
+
     }
 }

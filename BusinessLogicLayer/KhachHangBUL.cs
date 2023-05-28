@@ -55,6 +55,23 @@ namespace BusinessLogicLayer
             }
             return list;
         }
+        public IList<KhachHang> getAllFilter()
+        {
+            System.Data.DataTable table = dal.getAllFilter();
+            IList<KhachHang> list = new List<KhachHang>();
+            foreach (DataRow row in table.Rows)
+            {
+                KhachHang cls = new KhachHang();
+                cls.Makhachhang = row.Field<int>(0);
+                cls.Hoten = row.Field<string>(1);
+                cls.Diachi = row.Field<string>(2);
+                cls.Dienthoai = row.Field<string>(3);
+                cls.Email = row.Field<string>(4);
+                cls.Daxoa = row.Field<bool>(5);
+                list.Add(cls);
+            }
+            return list;
+        }
         public IList<KhachHang> SearchLinq(string value)
         {
                 return getAll().Where(x => (string.IsNullOrEmpty(value) || x.Hoten.Contains(value) ||

@@ -34,6 +34,11 @@ namespace Utility
             while (s.Length < max) s = s + " ";
             return s;
         }
-        
+        public static string ChuanHoaTien(float amountInMillions)
+        {
+            float result = amountInMillions / 1000000; // Chuyển đổi sang triệu VNĐ
+            string formattedAmount = result.ToString("N2") + " triệu VNĐ"; // Định dạng kết quả
+            return formattedAmount;
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace Presentation
             if(!cbIsExit.Checked)
             {
                 kh.Insert(new Entities.KhachHang(txtName.Text,"", txtPhone.Text,"",true));
-            }         
+            }        
             string sdt = txtPhone.Text;
             int makh;
             if (!cbIsExit.Checked)
@@ -79,9 +79,10 @@ namespace Presentation
                     MessageBox.Show(ex.Message, "Thông báo lỗi");
                 }
 
-            }
+            }           
             frm.ResetDgv();
             this.Close();
+            frm.LoadDgv();
         }
         private void txtPhone_TextChanged(object sender, EventArgs e)
         {

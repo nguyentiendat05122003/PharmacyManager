@@ -8,10 +8,10 @@ namespace Entities
 {
     public class TaiKhoan
     {
-        private int matk;
-        private string tentaikhoan;
-        private string matkhau;
-        private int manhanvien;
+        protected int matk;
+        protected string tentaikhoan;
+        protected string matkhau;
+        protected int manhanvien;
 
         public int Matk { get => matk; set => matk = value; }
         public string Tentaikhoan { get => tentaikhoan; set => tentaikhoan = value; }
@@ -23,23 +23,23 @@ namespace Entities
         }
         public TaiKhoan(TaiKhoan cls)
         {
-            this.Matk = cls.Matk;
-            this.Tentaikhoan = cls.Tentaikhoan;
-            this.Matkhau = cls.Matkhau;
-            this.Manhanvien = cls.Manhanvien;
+            this.matk = cls.matk;
+            this.tentaikhoan = cls.tentaikhoan;
+            this.matkhau = cls.matkhau;
+            this.manhanvien = cls.manhanvien;
         }
         public TaiKhoan(int matk, string tentaikhoan, string matkhau, int manhanvien)
         {
-            this.Matk = matk;
-            this.Tentaikhoan = tentaikhoan;
-            this.Matkhau = matkhau;
-            this.Manhanvien = manhanvien;
+            this.matk = matk;
+            this.tentaikhoan = tentaikhoan;
+            this.matkhau = matkhau;
+            this.manhanvien = manhanvien;
         }
         public TaiKhoan(string tentaikhoan, string matkhau, int manhanvien)
         {
-            this.Tentaikhoan = tentaikhoan;
-            this.Matkhau = matkhau;
-            this.Manhanvien = manhanvien;
+            this.tentaikhoan = tentaikhoan;
+            this.matkhau = matkhau;
+            this.manhanvien = manhanvien;
         }
     }
 }

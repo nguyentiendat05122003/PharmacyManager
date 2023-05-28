@@ -14,6 +14,8 @@ namespace BusinessLogicLayer.Interface
         int Delete(int makh);
         int Update(KhachHang cls);
         IList<KhachHang> getAll();
+        IList<KhachHang> getAllFilter();
+
         int checkkh_ID(int makh);
         IList<KhachHang> SearchLinq(string value);
     }

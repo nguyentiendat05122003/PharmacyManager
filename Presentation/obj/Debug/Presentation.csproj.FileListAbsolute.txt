@@ -53,7 +53,6 @@ D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\D
 D:\Teaching\Do an\Seminar_3Layer\Seminar_3Layer\3Layer_DongNH\Presentation\obj\Debug\Presentation.pdb
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.csproj.AssemblyReference.cache
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.csproj.SuggestedBindingRedirects.cache
-D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmAddUser.resources
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmCustomer.resources
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmEmployee.resources
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmHome.resources
@@ -94,3 +93,5 @@ D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.exe
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.pdb
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmImportSale.resources
 D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmTaiKhoan.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmXemHoaDon.resources
+D:\WorkSpace\Đồ án 1\PharmacyManager\Presentation\obj\Debug\Presentation.FrmXemPhieuNhap.resources

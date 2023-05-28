@@ -83,6 +83,24 @@ namespace DataAccessLayer
             return table;
         }
 
+        public DataTable getAllFilter()
+        {
+            SqlDataReader dra = SqlHelper.ExecuteReader(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_KhachHang_Sel_All_Filters", null);
+            DataTable table = new DataTable();
+            table.Columns.Add("MaKhachHang", typeof(int));
+            table.Columns.Add("HoTen", typeof(string));
+            table.Columns.Add("DiaChi", typeof(string));
+            table.Columns.Add("DienThoai", typeof(string));
+            table.Columns.Add("Email", typeof(string));
+            table.Columns.Add("DaXoa", typeof(bool));
+            while (dra.Read())
+            {
+                table.Rows.Add(int.Parse(dra["MaKhachHang"].ToString()), dra["HoTen"].ToString(), dra["DiaChi"].ToString(), dra["DienThoai"].ToString(), dra["Email"].ToString(), dra["DaXoa"].ToString());
+            }
+            dra.Dispose();
+            return table;
+        }
+
         public int checkKh_ID(int mancc)
         {
             SqlParameter[] parm = new SqlParameter[]

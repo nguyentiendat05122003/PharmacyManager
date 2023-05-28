@@ -54,12 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bien.cs" />
-    <Compile Include="FrmAddUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAddUser.designer.cs">
-      <DependentUpon>FrmAddUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +120,18 @@
     <Compile Include="FrmTaiKhoan.Designer.cs">
       <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmXemHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmXemHoaDon.Designer.cs">
+      <DependentUpon>FrmXemHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmXemPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmXemPhieuNhap.Designer.cs">
+      <DependentUpon>FrmXemPhieuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Class.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,9 +152,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAddUser.resx">
-      <DependentUpon>FrmAddUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmCustomer.resx">
       <DependentUpon>FrmCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +184,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTaiKhoan.resx">
       <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmXemHoaDon.resx">
+      <DependentUpon>FrmXemHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmXemPhieuNhap.resx">
+      <DependentUpon>FrmXemPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Class.resx">
       <DependentUpon>frm_Class.cs</DependentUpon>

@@ -52,9 +52,15 @@ namespace BusinessLogicLayer
             }
             return list;
         }
-        public int checkTaiKhoan_ID(int classID)
+        public IList<dynamic> Gettk(int manv)
         {
-            return dal.checkTaiKhoan_ID(classID);
+
+            List<dynamic> filteredAccountList = getAllJoin().Where(account => account.Manhanvien == manv).ToList();
+            return filteredAccountList;
+        }
+        public int checkTaiKhoan_ID(int matk)
+        {
+            return dal.checkTaiKhoan_ID(matk);
         }
         public bool checkTaiKhoan_IsExist(string tk,string mk)
         {
@@ -80,114 +86,23 @@ namespace BusinessLogicLayer
         {
             NhanVien thongtinnv = nv.getAll().FirstOrDefault(t => t.MaNhanVien ==manv);
             return thongtinnv;
-        }
-        //mã hóa
-        public string HashPassword(string password, int iterations, int SaltSize ,int HashSize)
-        {         
-            byte[] salt;
-            new RNGCryptoServiceProvider().GetBytes(salt = new byte[SaltSize]);
+        }       
 
-            // Create hash
-            var pbkdf2 = new Rfc2898DeriveBytes(password, salt, iterations);
-            var hash = pbkdf2.GetBytes(HashSize);
-
-            // Combine salt and hash
-            var hashBytes = new byte[SaltSize + HashSize];
-            Array.Copy(salt, 0, hashBytes, 0, SaltSize);
-            Array.Copy(hash, 0, hashBytes, SaltSize, HashSize);
-
-            // Convert to base64
-            var base64Hash = Convert.ToBase64String(hashBytes);
-
-            // Format hash with extra information
-            return string.Format("$MYHASH$V1${0}${1}", iterations, base64Hash);
-        }
-
-        //giải mã
-        public bool DecodePassword(string password, string hashedPassword, int SaltSize, int HashSize)
+        public IList<dynamic> getAllJoin()
         {
-            // Extract iteration and Base64 string
-            var splittedHashString = hashedPassword.Replace("$MYHASH$V1$", "").Split('$');
-            var iterations = int.Parse(splittedHashString[0]);
-            var base64Hash = splittedHashString[1];
-
-            // Get hash bytes
-            var hashBytes = Convert.FromBase64String(base64Hash);
-
-            // Get salt
-            var salt = new byte[SaltSize];
-            var storedHash = new byte[HashSize];
-
-            // Check if the hashBytes length is valid
-            if (hashBytes.Length >= SaltSize + HashSize)
-            {
-                Array.Copy(hashBytes, 0, salt, 0, SaltSize);
-                Array.Copy(hashBytes, SaltSize, storedHash, 0, HashSize);
-            }
-
-            // Create hash with given salt
-            var pbkdf2 = new Rfc2898DeriveBytes(password, salt, iterations);
-            byte[] hash = pbkdf2.GetBytes(HashSize);
-
-            // Get result
-            for (var i = 0; i < HashSize; i++)
-            {
-                if (storedHash[i] != hash[i])
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        
-
-        public  string Encrypt(string plainText)
-        {
-            byte[] encryptedBytes;
-            using (Aes aesAlg = Aes.Create())
-            {
-                aesAlg.Key = Encoding.UTF8.GetBytes("ThisIsASecretKey12345");
-                aesAlg.IV = Encoding.UTF8.GetBytes("ThisIsAnIV1234567");
-
-                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
-                using (MemoryStream msEncrypt = new MemoryStream())
-                {
-                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
-                    {
-                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+            var query = from account in getAll()
+                        join employee in nv.getAll() on account.Manhanvien equals employee.MaNhanVien
+                        select new
                         {
-                            swEncrypt.Write(plainText);
-                        }
-                        encryptedBytes = msEncrypt.ToArray();
-                    }
-                }
-            }
-            return Convert.ToBase64String(encryptedBytes);
-        }
+                            Matk = account.Matk,
+                            Tentaikhoan = account.Tentaikhoan,
+                            Manhanvien = employee.MaNhanVien,
+                            EmployeeName = employee.Hoten,
+                            Matkhau = account.Matkhau,
+                        };
 
-        public  string Decrypt(string encryptedText)
-        {
-            byte[] cipherBytes = Convert.FromBase64String(encryptedText);
-            string plainText;
-            using (Aes aesAlg = Aes.Create())
-            {
-                aesAlg.Key = Encoding.UTF8.GetBytes("ThisIsASecretKey12345"); ;
-                aesAlg.IV = Encoding.UTF8.GetBytes("ThisIsAnIV1234567");
-                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
-                using (MemoryStream msDecrypt = new MemoryStream(cipherBytes))
-                {
-                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
-                    {
-                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
-                        {
-                            plainText = srDecrypt.ReadToEnd();
-                        }
-                    }
-                }
-            }
-            return plainText;
+            var joinedList = query.ToList();
+            return joinedList.Cast<dynamic>().ToList(); ;
         }
     }
 }

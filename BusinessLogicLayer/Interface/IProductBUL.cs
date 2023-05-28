@@ -16,13 +16,20 @@ namespace BusinessLogicLayer.Interface
         int Update(Product pro);
 
         IList<Product> getAll();
+        IList<Product> getAllFilter();
 
         int checkProduct_ID(int Masanpham);
         List<dynamic> SearchLinq(string value);
-        void ThemTuExcel(string filePath);
         List<dynamic> getAllJoin();
-        void KetXuatWord(string templatePath, string exportPath);
 
-        int GetSoluong(int mathuoc);      
+        void KetXuatWord(string templatePath, string exportPath);
+        int GetSoluong(int mathuoc);
+
+        List<Product> GetSanPhamByNhaCungCap(int maNCC);
+        void KetXuatExcel(string templatePath, string exportPath);
+
+        void ThemTuExcel(string filePath);
+
+
     }
 }

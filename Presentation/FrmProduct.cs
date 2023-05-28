@@ -30,7 +30,6 @@ namespace Presentation
             var product_provider = product.getAllJoin();
             dgvProduct.DataSource = product_provider;
             cbbDonvitinh.DataSource = donViTinh.getAll();
-            dgvProduct_CellFormatting();
         }
         private void ResetForm()
         {
@@ -56,8 +55,6 @@ namespace Presentation
             dgvProduct.DataSource = product_provider;
             cbbDonvitinh.DataSource = donViTinh.getAll();          
             SetDisplayCbb(cbbDonvitinh, "MaDonViTinh", "TenDonViTinh");
-            dgvProduct_CellFormatting();
-            dgvProduct.CellFormatting += dgvProduct_CellFormatting;
             dgvProduct.RowPrePaint += dgvProduct_RowPrePaint;
         }
         private void btnAdd_Click_1(object sender, EventArgs e)
@@ -68,8 +65,9 @@ namespace Presentation
             {
                 try
                 {
-                    int val = product.Insert(new Product(txttenthuoc.Text, float.Parse(txtgiaban.Text), DateTime.Parse(txthansudung.Text), rdbYes.Checked, (int)cbbDonvitinh.SelectedValue, int.Parse(txtsoluong.Text)));
-                    LoadData();
+                    float giaban = txtgiaban.Text.Trim() == "" ? 0 : float.Parse(txtgiaban.Text);
+                    int val = product.Insert(new Product(txttenthuoc.Text, giaban , DateTime.Parse(txthansudung.Text), rdbNo.Checked, (int)cbbDonvitinh.SelectedValue,0));
+                    LoadData(); 
                     if (val == -1)
                         MessageBox.Show("Thêm dữ liệu không thành công, hãy kiểm tra lại!", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     else
@@ -94,7 +92,7 @@ namespace Presentation
             pro.Giaban = int.Parse(txtgiaban.Text);
             pro.Hansudung = DateTime.Parse(txthansudung.Text);
             pro.Madonvitinh = (int)cbbDonvitinh.SelectedValue;
-            pro.Dungkinhdoanh = rdbYes.Checked;
+            pro.Dungkinhdoanh = rdbNo.Checked;
             pro.Soluong = int.Parse(txtsoluong.Text);
             try
             {
@@ -148,14 +146,14 @@ namespace Presentation
             string state = dgvProduct[6, dgvProduct.CurrentCell.RowIndex].Value.ToString();
             if (state == "True")
             {
-                rdbYes.Checked = true;
+                rdbNo.Checked = true;
             }
             else if (state == "False")
             {
-                rdbNo.Checked = true;
+                rdbYes.Checked = true;
             }
-            txtsoluong.Text = dgvProduct[5, dgvProduct.CurrentCell.RowIndex].Value.ToString();
-            cbbDonvitinh.Text = dgvProduct[4, dgvProduct.CurrentCell.RowIndex].Value.ToString();
+            txtsoluong.Text = dgvProduct[4, dgvProduct.CurrentCell.RowIndex].Value.ToString();
+            cbbDonvitinh.Text = dgvProduct[5, dgvProduct.CurrentCell.RowIndex].Value.ToString();
         }
         private void btnExit_Click_1(object sender, EventArgs e)
         {
@@ -179,10 +177,7 @@ namespace Presentation
                     MessageBox.Show(ex.Message, "Thông báo lỗi");
                 }
             }
-        }
-
-       
-
+        }      
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dgvProduct.DataSource = product.SearchLinq(txtSearch.Text);
@@ -207,26 +202,58 @@ namespace Presentation
                 }
             }
 
-        }
+        }  
 
-        private void dgvProduct_CellFormatting()
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            
-        }
-
-        private void dgvProduct_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-
-            
-
+            dgvProduct.DataSource = product.SearchLinq(txtSearch.Text);
         }
 
         private void dgvProduct_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-            if (dgvProduct.Rows[e.RowIndex].Cells[6].Value is bool && !(bool)dgvProduct.Rows[e.RowIndex].Cells[6].Value)
+            if (dgvProduct.Rows[e.RowIndex].Cells["cldungkinhdoanh"].Value.ToString() == "True")
             {
-                dgvProduct.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGray;
-                dgvProduct.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Red;
+                // Thiết lập màu nền cho dòng
+                dgvProduct.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+            }
+        }
+
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Microsoft Excel | *.xlsx";
+            saveFileDialog.Title = "Lưu danh sách sinh viên";
+            saveFileDialog.ShowDialog();
+            if (saveFileDialog.FileName != "")
+            {
+                try
+                {
+                    product.KetXuatExcel(@"Template\SinhVien_Template.xlsx", saveFileDialog.FileName);
+                    MessageBox.Show("Kết xuất thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Thông báo lỗi");
+                }
+            }
+        }
+
+        private void btnImportExcel_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog saveFileDialog = new OpenFileDialog();
+            saveFileDialog.DefaultExt = "*.xlsx";
+            saveFileDialog.Filter = "Excel (*.xlsx)|*.xlsx";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    product.ThemTuExcel(saveFileDialog.FileName);
+                    LoadData();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Thông báo lỗi");
+                }
             }
         }
     }

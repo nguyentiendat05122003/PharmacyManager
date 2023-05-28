@@ -67,7 +67,7 @@ namespace BusinessLogicLayer
         public IList<Provider> GetProviderIsContact()
         {
             var items = getAll()
-            .Where(row => row.Ngunghoptac == true)
+            .Where(row => row.Ngunghoptac == false)
             .ToList();
             return items;
         }
@@ -79,5 +79,6 @@ namespace BusinessLogicLayer
             .FirstOrDefault();
             return tenNhaCungCap;
         }
+      
     }
 }

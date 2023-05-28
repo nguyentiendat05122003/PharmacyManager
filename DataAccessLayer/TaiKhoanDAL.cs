@@ -35,7 +35,6 @@ namespace DataAccessLayer
                 new SqlParameter(PARM_MATK,SqlDbType.Int)
             };
             parm[0].Value = matk;
-
             return SqlHelper.ExecuteNonQuery(SqlHelper.ConnectionString, CommandType.StoredProcedure, "tbl_TaiKhoan_Del", parm);
         }
        
@@ -46,7 +45,7 @@ namespace DataAccessLayer
                 new SqlParameter(PARM_MATK,SqlDbType.Int),
                 new SqlParameter(PARM_TENTK,SqlDbType.Int),
                 new SqlParameter(PARM_MATKHAU,SqlDbType.VarChar,20),
-                new SqlParameter(PARM_MANV,SqlDbType.VarChar,20),
+                new SqlParameter(PARM_MANV,SqlDbType.Int),
             };
             parm[0].Value = matk;
             parm[1].Value = tentaikhoan;

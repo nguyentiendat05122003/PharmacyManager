@@ -13,12 +13,18 @@ namespace BusinessLogicLayer.Interface
         int Delete(int hdid);
         int Update(HoaDonBan cls);
         IList<HoaDonBan> getAll();
-        IList<HoaDonBan> SearchLinq(HoaDonBan cls);
+
+        List<dynamic> GetAllJoinFull();
+
+        IList<dynamic> SearchLinq(string value);
 
         int checkHoaDon_ID(int classID);
 
         float GetDoanhThu(int month,int year);
 
         HoaDonBan GetLastHD();
+
+        void KetXuatWord(string templatePath, string exportPath);
+
     }
 }
